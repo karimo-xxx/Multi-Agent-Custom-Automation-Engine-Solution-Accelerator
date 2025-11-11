@@ -200,7 +200,7 @@ const PlanPanelLeft: React.FC<PlanPanelLefProps> = ({
         <PanelLeftToolbar
           linkTo={onNavigationWithAlert ? undefined : "/"}
           onTitleClick={onNavigationWithAlert ? handleLogoClick : undefined}
-          panelTitle="Contoso"
+          panelTitle="ALTYCA GmbH"
           panelIcon={<ContosoLogo />}
         >
           <Tooltip content="New task" relationship={"label"} />
