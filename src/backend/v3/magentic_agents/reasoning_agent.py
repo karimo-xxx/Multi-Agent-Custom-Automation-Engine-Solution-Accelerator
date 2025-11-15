@@ -5,7 +5,7 @@ from semantic_kernel import Kernel
 from semantic_kernel.agents import ChatCompletionAgent  # pylint: disable=E0611
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 from v3.magentic_agents.common.lifecycle import MCPEnabledBase
-from v3.magentic_agents.models.agent_models import MCPConfig, SearchConfig
+from v3.magentic_agents.models.agent_models import FabricConfig, MCPConfig, SearchConfig
 from v3.magentic_agents.reasoning_search import ReasoningSearch
 from v3.config.agent_registry import agent_registry
 
@@ -25,6 +25,7 @@ class ReasoningAgentTemplate(MCPEnabledBase):
         azure_openai_endpoint: str,
         search_config: SearchConfig | None = None,
         mcp_config: MCPConfig | None = None,
+        fabric_config: FabricConfig | None = None,
     ) -> None:
         super().__init__(mcp=mcp_config)
         self.agent_name = agent_name
@@ -33,6 +34,7 @@ class ReasoningAgentTemplate(MCPEnabledBase):
         self._model_deployment_name = model_deployment_name
         self._openai_endpoint = azure_openai_endpoint
         self.search_config = search_config
+        self.fabric_config = fabric_config
         self.reasoning_search: ReasoningSearch | None = None
         self.logger = logging.getLogger(__name__)
 

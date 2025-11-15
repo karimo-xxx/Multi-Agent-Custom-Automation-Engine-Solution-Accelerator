@@ -143,6 +143,10 @@ class TeamService:
             use_mcp=agent_data.get("use_mcp", False),
             use_bing=agent_data.get("use_bing", False),
             use_reasoning=agent_data.get("use_reasoning", False),
+            use_fabric=agent_data.get("use_fabric", False),
+            fabric_connection_id=agent_data.get("fabric_connection_id", ""),
+            workspace_id=agent_data.get("workspace_id", ""),
+            artifact_id=agent_data.get("artifact_id", ""),
             index_name=agent_data.get("index_name", ""),
             coding_tools=agent_data.get("coding_tools", False),
         )

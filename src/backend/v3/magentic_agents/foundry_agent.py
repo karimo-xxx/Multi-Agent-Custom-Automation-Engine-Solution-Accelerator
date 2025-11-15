@@ -3,10 +3,10 @@
 import logging
 from typing import Awaitable, List, Optional
 
-from azure.ai.agents.models import AzureAISearchTool, CodeInterpreterToolDefinition
+from azure.ai.agents.models import AzureAISearchTool, CodeInterpreterToolDefinition, FabricTool
 from semantic_kernel.agents import Agent, AzureAIAgent  # pylint: disable=E0611
 from v3.magentic_agents.common.lifecycle import AzureAgentBase
-from v3.magentic_agents.models.agent_models import MCPConfig, SearchConfig
+from v3.magentic_agents.models.agent_models import FabricConfig, MCPConfig, SearchConfig
 
 from v3.config.agent_registry import agent_registry
 
@@ -30,6 +30,7 @@ class FoundryAgentTemplate(AzureAgentBase):
         mcp_config: MCPConfig | None = None,
         # bing_config: BingConfig | None = None,
         search_config: SearchConfig | None = None,
+        fabric_config: FabricConfig | None = None,
     ) -> None:
         super().__init__(mcp=mcp_config)
         self.agent_name = agent_name
@@ -40,6 +41,7 @@ class FoundryAgentTemplate(AzureAgentBase):
         # self.bing = bing_config
         self.mcp = mcp_config
         self.search = search_config
+        self.fabric = fabric_config
         self._search_connection = None
         self._bing_connection = None
         self.logger = logging.getLogger(__name__)
@@ -99,6 +101,32 @@ class FoundryAgentTemplate(AzureAgentBase):
             )
             return None
 
+    async def _make_fabric_tool(self) -> Optional[FabricTool]:
+        """Create Microsoft Fabric Data Agent tool."""
+        if not self.fabric:
+            self.logger.info("Fabric Data Agent tool not enabled")
+            return None
+
+        try:
+            # FabricTool requires connection_id in format: /subscriptions/{sub_id}/resourceGroups/{rg}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/connections/{connection_name}
+            fabric_tool = FabricTool(connection_id=self.fabric.fabric_connection_id)
+            self.logger.info(
+                "Fabric Data Agent tool created | Connection: %s | Workspace: %s | Artifact: %s",
+                self.fabric.fabric_connection_id,
+                self.fabric.workspace_id,
+                self.fabric.artifact_id,
+            )
+            return fabric_tool
+
+        except Exception as ex:
+            self.logger.error(
+                "Fabric Data Agent tool creation failed: %s | Connection ID: %s | "
+                "Ensure the Azure AI Foundry Connection exists and fabric_connection_id is correct",
+                ex,
+                self.fabric.fabric_connection_id,
+            )
+            return None
+
     async def _collect_tools_and_resources(self) -> tuple[List, dict]:
         """Collect all available tools and their corresponding tool_resources."""
         tools = []
@@ -117,6 +145,20 @@ class FoundryAgentTemplate(AzureAgentBase):
             else:
                 self.logger.error(
                     "Something went wrong, Azure AI Search tool not configured"
+                )
+
+        # Add Microsoft Fabric Data Agent tool
+        if self.fabric:
+            fabric_tool = await self._make_fabric_tool()
+            if fabric_tool:
+                tools.extend(fabric_tool.definitions)
+                self.logger.info(
+                    "Added Fabric Data Agent tools: %d tools",
+                    len(fabric_tool.definitions),
+                )
+            else:
+                self.logger.error(
+                    "Something went wrong, Fabric Data Agent tool not configured"
                 )
 
         # Add Bing search tool

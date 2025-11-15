@@ -170,6 +170,10 @@ class TeamAgent(KernelBaseModel):
     use_mcp: bool = False
     use_bing: bool = False
     use_reasoning: bool = False
+    use_fabric: bool = False
+    fabric_connection_id: str = ""
+    workspace_id: str = ""
+    artifact_id: str = ""
     coding_tools: bool = False
 
 

@@ -80,6 +80,10 @@ class AgentsService:
                     "index_name": getattr(a, "index_name", ""),
                     "use_rag": getattr(a, "use_rag", False),
                     "use_mcp": getattr(a, "use_mcp", False),
+                    "use_fabric": getattr(a, "use_fabric", False),
+                    "fabric_connection_id": getattr(a, "fabric_connection_id", ""),
+                    "workspace_id": getattr(a, "workspace_id", ""),
+                    "artifact_id": getattr(a, "artifact_id", ""),
                     "coding_tools": getattr(a, "coding_tools", False),
                     # Placeholder for later wiring to a runtime/agent instance
                     "agent_obj": None,
@@ -95,6 +99,10 @@ class AgentsService:
                     "index_name": a.get("index_name"),
                     "use_rag": a.get("use_rag", False),
                     "use_mcp": a.get("use_mcp", False),
+                    "use_fabric": a.get("use_fabric", False),
+                    "fabric_connection_id": a.get("fabric_connection_id", ""),
+                    "workspace_id": a.get("workspace_id", ""),
+                    "artifact_id": a.get("artifact_id", ""),
                     "coding_tools": a.get("coding_tools", False),
                     "agent_obj": None,
                 }

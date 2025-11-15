@@ -1,6 +1,7 @@
 """Models for agent configurations."""
 
 from dataclasses import dataclass
+from typing import Optional
 
 from common.config.app_config import config
 
@@ -82,3 +83,52 @@ class SearchConfig:
             endpoint=endpoint,
             api_key=api_key,
         )
+
+
+@dataclass(slots=True)
+class FabricConfig:
+    """Configuration for Fabric Data Agent integration."""
+    
+    fabric_connection_id: str
+    workspace_id: str
+    artifact_id: str
+    endpoint_url: str = "https://api.fabric.microsoft.com/v1"
+    
+    @classmethod
+    def from_agent_config(cls, agent_obj) -> Optional["FabricConfig"]:
+        """
+        Create FabricConfig from agent configuration object.
+        
+        Args:
+            agent_obj: Agent object with Fabric configuration attributes
+            
+        Returns:
+            FabricConfig instance if use_fabric=True, None otherwise
+            
+        Raises:
+            ValueError: If use_fabric=True but required fields are missing
+        """
+        if not getattr(agent_obj, "use_fabric", False):
+            return None
+        
+        workspace_id = getattr(agent_obj, "workspace_id", "")
+        artifact_id = getattr(agent_obj, "artifact_id", "")
+        fabric_connection_id = getattr(agent_obj, "fabric_connection_id", "")
+        
+        if not all([workspace_id, artifact_id, fabric_connection_id]):
+            raise ValueError(
+                f"Agent '{agent_obj.name}' has use_fabric=True but missing required fields: "
+                f"workspace_id='{workspace_id}', artifact_id='{artifact_id}', "
+                f"fabric_connection_id='{fabric_connection_id}'"
+            )
+        
+        return cls(
+            fabric_connection_id=fabric_connection_id,
+            workspace_id=workspace_id,
+            artifact_id=artifact_id
+        )
+    
+    def get_endpoint_url(self) -> str:
+        """Get full Fabric Data Agent endpoint URL."""
+        return f"{self.endpoint_url}/workspaces/{self.workspace_id}/aiskills/{self.artifact_id}/aiassistant/openai"
+
