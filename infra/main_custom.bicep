@@ -148,7 +148,7 @@ param frontendContainerRegistryHostname string = 'biabcontainerreg.azurecr.io'
 param frontendContainerImageName string = 'macaefrontend'
 
 @description('Optional. The Container Image Tag to deploy on the frontend.')
-param frontendContainerImageTag string = 'latest_v3'
+param frontendContainerImageTag string = 'latest_v5'
 
 @description('Optional. The Container Registry hostname where the docker images for the MCP are located.')
 param MCPContainerRegistryHostname string = 'biabcontainerreg.azurecr.io'

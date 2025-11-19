@@ -18,7 +18,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Plan, PlanPanelLefProps, Task, UserInfo } from "@/models";
 import { apiService } from "@/api";
 import { TaskService } from "@/services";
-import ContosoLogo from "../../coral/imports/ContosoLogo";
+import ALTYCALogo from "../../coral/imports/ALTYCALogo";
 import "../../styles/PlanPanelLeft.css";
 import PanelFooter from "@/coral/components/Panels/PanelFooter";
 import PanelUserCard from "../../coral/components/Panels/UserCard";
@@ -200,8 +200,8 @@ const PlanPanelLeft: React.FC<PlanPanelLefProps> = ({
         <PanelLeftToolbar
           linkTo={onNavigationWithAlert ? undefined : "/"}
           onTitleClick={onNavigationWithAlert ? handleLogoClick : undefined}
-          panelTitle="Contoso"
-          panelIcon={<ContosoLogo />}
+          panelTitle="ALTYCA GmbH"
+          panelIcon={<ALTYCALogo />}
         >
           <Tooltip content="New task" relationship={"label"} />
         </PanelLeftToolbar>
