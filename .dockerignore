@@ -1,0 +1,61 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Azure files
+.azure
+
+# Python virtual environments
+.venv
+venv/
+env/
+ENV/
+*.pyc
+__pycache__/
+
+# Node modules
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Scripts with environments
+infra/scripts/scriptenv/
+
+# Logs
+*.log
+
+# Test files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Documentation
+docs/
+*.md
+LICENSE
+SECURITY.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+SUPPORT.md
+TRANSPARENCY_FAQS.md
+
+# Data files (if large)
+data/
+
+# Tests
+tests/

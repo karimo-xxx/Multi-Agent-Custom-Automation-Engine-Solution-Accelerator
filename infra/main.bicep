@@ -131,26 +131,17 @@ param virtualMachineAdminPassword string = newGuid()
 
 // These parameters are changed for testing - please reset as part of publication
 
-@description('Optional. The Container Registry hostname where the docker images for the backend are located.')
-param backendContainerRegistryHostname string = 'biabcontainerreg.azurecr.io'
-
 @description('Optional. The Container Image Name to deploy on the backend.')
 param backendContainerImageName string = 'macaebackend'
 
 @description('Optional. The Container Image Tag to deploy on the backend.')
 param backendContainerImageTag string = 'latest_v3'
 
-@description('Optional. The Container Registry hostname where the docker images for the frontend are located.')
-param frontendContainerRegistryHostname string = 'biabcontainerreg.azurecr.io'
-
 @description('Optional. The Container Image Name to deploy on the frontend.')
 param frontendContainerImageName string = 'macaefrontend'
 
 @description('Optional. The Container Image Tag to deploy on the frontend.')
 param frontendContainerImageTag string = 'latest_v3'
-
-@description('Optional. The Container Registry hostname where the docker images for the MCP are located.')
-param MCPContainerRegistryHostname string = 'biabcontainerreg.azurecr.io'
 
 @description('Optional. The Container Image Name to deploy on the MCP.')
 param MCPContainerImageName string = 'macaemcp'
@@ -382,6 +373,34 @@ module userAssignedIdentity 'br/public:avm/res/managed-identity/user-assigned-id
     enableTelemetry: enableTelemetry
   }
 }
+
+// ========== Container Registry ========== //
+// Container Registry for hosting Docker images for Backend, Frontend, and MCP services
+var containerRegistryResourceName = 'cr${solutionSuffix}'
+module containerRegistry 'modules/container-registry.bicep' = {
+  name: take('module.containerRegistry.${containerRegistryResourceName}', 64)
+  params: {
+    name: containerRegistryResourceName
+    location: location
+    tags: tags
+    sku: 'Basic'
+    adminUserEnabled: true
+    publicNetworkAccess: enablePrivateNetworking ? 'Disabled' : 'Enabled'
+    roleAssignments: [
+      {
+        principalId: userAssignedIdentity.outputs.principalId
+        roleDefinitionIdOrName: 'AcrPull'
+        principalType: 'ServicePrincipal'
+      }
+      {
+        principalId: deployingUserPrincipalId
+        roleDefinitionIdOrName: 'AcrPush'
+        principalType: deployerPrincipalType
+      }
+    ]
+  }
+}
+
 // ========== Virtual Network ========== //
 // WAF best practices for virtual networks: https://learn.microsoft.com/en-us/azure/well-architected/service-guides/virtual-network
 // WAF recommendations for networking and connectivity: https://learn.microsoft.com/en-us/azure/well-architected/security/networking
@@ -1201,7 +1220,7 @@ module containerApp 'br/public:avm/res/app/container-app:0.18.1' = {
     containers: [
       {
         name: 'backend'
-        image: '${backendContainerRegistryHostname}/${backendContainerImageName}:${backendContainerImageTag}'
+        image: '${containerRegistry.outputs.loginServer}/${backendContainerImageName}:${backendContainerImageTag}'
         resources: {
           cpu: '2.0'
           memory: '4.0Gi'
@@ -1393,7 +1412,7 @@ module containerAppMcp 'br/public:avm/res/app/container-app:0.18.1' = {
     containers: [
       {
         name: 'mcp'
-        image: '${MCPContainerRegistryHostname}/${MCPContainerImageName}:${MCPContainerImageTag}'
+        image: '${containerRegistry.outputs.loginServer}/${MCPContainerImageName}:${MCPContainerImageTag}'
         resources: {
           cpu: '2.0'
           memory: '4.0Gi'
@@ -1487,7 +1506,7 @@ module webSite 'modules/web-sites.bicep' = {
     kind: 'app,linux,container'
     serverFarmResourceId: webServerFarm.?outputs.resourceId
     siteConfig: {
-      linuxFxVersion: 'DOCKER|${frontendContainerRegistryHostname}/${frontendContainerImageName}:${frontendContainerImageTag}'
+      linuxFxVersion: 'DOCKER|${containerRegistry.outputs.loginServer}/${frontendContainerImageName}:${frontendContainerImageTag}'
       minTlsVersion: '1.2'
     }
     configs: [
@@ -1495,7 +1514,7 @@ module webSite 'modules/web-sites.bicep' = {
         name: 'appsettings'
         properties: {
           SCM_DO_BUILD_DURING_DEPLOYMENT: 'true'
-          DOCKER_REGISTRY_SERVER_URL: 'https://${frontendContainerRegistryHostname}'
+          DOCKER_REGISTRY_SERVER_URL: 'https://${containerRegistry.outputs.loginServer}'
           WEBSITES_PORT: '3000'
           WEBSITES_CONTAINER_START_TIME_LIMIT: '1800' // 30 minutes, adjust as needed
           BACKEND_API_URL: 'https://${containerApp.outputs.fqdn}'
@@ -1787,3 +1806,5 @@ output MCP_SERVER_DESCRIPTION string = 'MCP server with greeting, HR, and planni
 output SUPPORTED_MODELS string = '["o3","o4-mini","gpt-4.1","gpt-4.1-mini"]'
 output AZURE_AI_SEARCH_API_KEY string = '<Deployed-Search-ApiKey>'
 output BACKEND_URL string = 'https://${containerApp.outputs.fqdn}'
+output CONTAINER_REGISTRY_NAME string = containerRegistry.outputs.name
+output CONTAINER_REGISTRY_LOGIN_SERVER string = containerRegistry.outputs.loginServer
