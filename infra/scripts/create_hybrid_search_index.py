@@ -112,28 +112,23 @@ def create_hybrid_search_index(ai_search_endpoint: str, index_name: str = "macae
             sortable=True
         ),
         
-        # Customer/Order references for cross-document relationships
+        # Customer/Order references for cross-document relationships (optional)
         SearchableField(
             name="customer_id",
             type=SearchFieldDataType.String,
             filterable=True,
-            searchable=True
+            searchable=True,
+            key=False,
+            retrievable=True
         ),
         
         SearchableField(
             name="order_id",
             type=SearchFieldDataType.String,
             filterable=True,
-            searchable=True
-        ),
-        
-        # Tags for categorization
-        SearchableField(
-            name="tags",
-            type=SearchFieldDataType.Collection(SearchFieldDataType.String),
-            filterable=True,
-            facetable=True,
-            searchable=True
+            searchable=True,
+            key=False,
+            retrievable=True
         )
     ]
     
@@ -165,9 +160,6 @@ def create_hybrid_search_index(ai_search_endpoint: str, index_name: str = "macae
             title_field=SemanticField(field_name="title"),
             content_fields=[
                 SemanticField(field_name="content")
-            ],
-            keywords_fields=[
-                SemanticField(field_name="tags")
             ]
         )
     )

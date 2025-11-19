@@ -134,24 +134,35 @@ def prepare_document_for_indexing(
     if created_date_str:
         try:
             # Try ISO format first
-            created_date = datetime.fromisoformat(created_date_str.replace('Z', '+00:00')).isoformat()
+            dt = datetime.fromisoformat(created_date_str.replace('Z', '+00:00'))
+            # Ensure timezone-aware datetime with UTC timezone
+            if dt.tzinfo is None:
+                from datetime import timezone
+                dt = dt.replace(tzinfo=timezone.utc)
+            created_date = dt.isoformat()
         except:
             try:
                 # Try parsing DD.MM.YYYY format (German)
+                from datetime import timezone
                 dt = datetime.strptime(created_date_str, '%d.%m.%Y')
+                dt = dt.replace(tzinfo=timezone.utc)
                 created_date = dt.isoformat()
             except:
-                # Default to current date
-                created_date = datetime.utcnow().isoformat()
+                # Default to current date with UTC timezone
+                from datetime import timezone
+                created_date = datetime.now(timezone.utc).isoformat()
     else:
-        created_date = datetime.utcnow().isoformat()
+        from datetime import timezone
+        created_date = datetime.now(timezone.utc).isoformat()
     
-    # Extract tags
+    # Extract tags - ensure it's a list
     tags = metadata.get('tags', [])
     if isinstance(tags, str):
         tags = [tags]
+    elif not isinstance(tags, list):
+        tags = []
     
-    # Build the indexed document
+    # Build the indexed document - only include customer_id and order_id if they exist
     indexed_doc = {
         'id': doc_data['id'],
         'type': doc_data['type'],
@@ -159,11 +170,14 @@ def prepare_document_for_indexing(
         'content': doc_data['content'],
         'content_vector': embedding_vector,
         'company': metadata.get('company', 'ALTYCA GmbH'),
-        'created_date': created_date,
-        'customer_id': customer_id,
-        'order_id': order_id,
-        'tags': tags
+        'created_date': created_date
     }
+    
+    # Add optional fields only if they have values
+    if customer_id:
+        indexed_doc['customer_id'] = customer_id
+    if order_id:
+        indexed_doc['order_id'] = order_id
     
     return indexed_doc
 
