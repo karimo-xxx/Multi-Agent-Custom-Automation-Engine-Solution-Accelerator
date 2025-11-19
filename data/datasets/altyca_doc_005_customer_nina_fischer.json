@@ -1,0 +1,30 @@
+{
+  "id": "ALTYCA-CUST-005",
+  "type": "customer_profile",
+  "title": "Nina Fischer - Frequent Buyer mit Fokus auf Nachhaltigkeit",
+  "content": "Nina Fischer, 41 Jahre alt aus Freiburg, ist seit April 2023 bei ALTYCA GmbH und hat sich als äußerst umweltbewusste Kundin positioniert. Die selbstständige Beraterin für Nachhaltigkeitsmanagement kauft ausschließlich aus unserer ECO-Line und hat in 15 Monaten 16 Bestellungen mit einem Gesamtwert von 6.780 EUR getätigt. Sie hat den Gold-Status erreicht.\n\nNina interessiert sich besonders für unsere plastikfreien Verpackungen und recycelten Materialien. Ihre letzte Bestellung (ORD-2024-ALT-1734) umfasste den Bamboo Desk Organizer, das ECO Notebook Set und die Solar-Powered Desk Lamp. Sie schreibt detaillierte Bewertungen zu jedem Produkt und bewertet dabei immer auch die Nachhaltigkeit der Verpackung.\n\nIm Mai 2024 kontaktierte Nina unseren Support mit konstruktivem Feedback zur Verbesserung unserer Nachhaltigkeits-Labels auf der Website (INT-2024-MAY-0123). Unser Produktmanagement-Team nahm ihre Vorschläge ernst und implementierte klarere Kennzeichnungen für CO2-neutrale Produkte. Nina war begeistert und teilte dies in ihrem LinkedIn-Netzwerk.\n\nBesonders erwähnenswert: Nina hat an unserer Kunden-Fokusgruppe zum Thema 'Nachhaltige Produktentwicklung' teilgenommen und wertvolle Insights geliefert. Sie ist auch Mitglied unserer ALTYCA Green Community und nimmt regelmäßig an Webinaren teil.\n\nKontaktpräferenzen: E-Mail, Newsletter für nachhaltige Produkte, Push-Benachrichtigungen für ECO-Line Updates.",
+  "metadata": {
+    "customer_id": "CUST-ALT-10005",
+    "customer_name": "Nina Fischer",
+    "location": "Freiburg im Breisgau, Deutschland",
+    "loyalty_tier": "Gold",
+    "loyalty_points": 1567,
+    "member_since": "2023-04-22",
+    "total_orders": 16,
+    "lifetime_value": 6780.00,
+    "date_created": "2023-04-22",
+    "last_updated": "2024-11-10",
+    "tags": ["sustainability", "eco-conscious", "community-member", "product-feedback", "influencer"],
+    "priority": "Medium",
+    "department": "Customer Success",
+    "satisfaction_score": 9.7
+  },
+  "cross_references": {
+    "orders": ["ORD-2024-ALT-1734", "ORD-2024-ALT-1456", "ORD-2023-ALT-0789"],
+    "service_interactions": ["INT-2024-MAY-0123", "INT-2024-AUG-0345"],
+    "products_purchased": ["PROD-BAMBOO-ORGANIZER", "PROD-ECO-NOTEBOOK-SET", "PROD-SOLAR-LAMP"],
+    "incidents": [],
+    "reviews": ["REV-2024-0456", "REV-2024-0287", "REV-2024-0134"],
+    "related_customers": []
+  }
+}

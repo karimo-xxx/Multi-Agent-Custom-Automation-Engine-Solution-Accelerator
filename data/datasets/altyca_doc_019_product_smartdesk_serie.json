@@ -1,0 +1,27 @@
+{
+  "id": "ALTYCA-PROD-002",
+  "type": "product_catalog",
+  "title": "SmartDesk Serie - Elektrisch höhenverstellbare Schreibtische",
+  "content": "Die SmartDesk Serie von ALTYCA GmbH bietet innovative, elektrisch höhenverstellbare Schreibtische für das moderne, gesundheitsbewusste Arbeiten. Mit über 2.100 verkauften Einheiten seit Launch im Juni 2023 und einer herausragenden Bewertung von 4.8/5 Sternen ist die SmartDesk Serie ein Kundenliebling.\n\nProduktlinie:\n\n1. **SmartDesk Premium (PROD-SMARTDESK-PREMIUM)** - Flagship Model\n   - Preis: 1.899,00 EUR\n   - Größe: 180x80cm (auch verfügbar: 160x80cm für 1.699 EUR)\n   - Zielgruppe: Home-Office Professionals, Executive Offices\n   - Besonderheiten:\n     * Dual-Motor-System für sanftes, leises Verstellen (< 45dB)\n     * Höhenverstellung: 62cm - 127cm (sitzend & stehend)\n     * 4 Memory-Presets per Touchpad\n     * Anti-Kollisions-Sensor\n     * Integriertes Kabelmanagement\n     * Premium Bambus-Arbeitsplatte (nachhaltig)\n     * Tragkraft: bis 120kg\n     * 5 Jahre Garantie auf Mechanik\n   - Farboptionen Gestell: Schwarz, Weiß, Silber\n   - Plattenoptionen: Bambus Natur, Bambus Dunkel, Walnuss\n\n2. **SmartDesk Basic (PROD-SMARTDESK-BASIC)** - Entry Model\n   - Preis: 799,00 EUR\n   - Größe: 140x70cm\n   - Zielgruppe: Studenten, Budget-conscious Buyers\n   - Besonderheiten:\n     * Single-Motor-System\n     * Höhenverstellung: 70cm - 120cm\n     * 2 Memory-Presets\n     * Melamin-Platte (pflegeleicht)\n     * Tragkraft: bis 80kg\n     * 3 Jahre Garantie\n\n3. **SmartDesk Pro Business (PROD-STANDING-DESK-PRO)** - B2B Model\n   - Preis: 499,00 EUR (Einzelpreis), ab 399,00 EUR (ab 6 Stück)\n   - Größe: 160x80cm\n   - Zielgruppe: Corporate Offices, Co-Working\n   - Besonderheiten:\n     * Robust für Dauerbetrieb\n     * Dual-Motor mit erweiterter Garantie\n     * 4 Memory-Presets\n     * Höhenverstellung: 65cm - 125cm\n     * Weiße oder graue HPL-Platte (sehr robust)\n     * 5 Jahre B2B-Garantie\n\nGesundheits-Features:\nAlle SmartDesk-Modelle unterstützen den Wechsel zwischen Sitzen und Stehen, was nachweislich:\n- Rückenschmerzen um bis zu 54% reduziert (Studie TU München, 2022)\n- Kalorienverbrauch um 15% erhöht\n- Konzentration und Produktivität steigert\n- Herz-Kreislauf-System aktiviert\n\nSmartDesk App (optional):\nKostenlose iOS/Android App zur:\n- Erinnerung an Haltungswechsel\n- Tracking von Steh-/Sitzzeiten\n- Personalisierte Ergonomie-Tipps\n- Bluetooth-Verbindung zum Schreibtisch\n\nInstallation:\nProfessionelle Montagehilfe verfügbar (149 EUR, kostenlos ab Platinum-Status). DIY-Montage ca. 45-60 Minuten, Werkzeug inklusive, Video-Anleitung verfügbar.\n\nNachhaltigkeit:\nBambus-Platten aus FSC-zertifiziertem Anbau. Gestell zu 85% aus recyceltem Stahl. Carbon-Footprint: 42kg CO2, vollständig kompensiert.\n\nKundenfeedback:\n- \"Lebensverändernd für mein Home-Office!\" - Sarah Weber (5 Sterne)\n- \"Leise, schnell, perfekt verarbeitet\" - Thomas K., B2B-Kunde\n- \"Jeden Cent wert, keine Rückenschmerzen mehr\" - Nina F.",
+  "metadata": {
+    "product_family": "SmartDesk Serie",
+    "category": "Ergonomic Furniture",
+    "sub_category": "Height-Adjustable Desks",
+    "manufacturer": "DeskMotion GmbH (Germany)",
+    "first_launched": "2023-06-01",
+    "units_sold": 2100,
+    "average_rating": 4.8,
+    "return_rate": 0.05,
+    "tags": ["height-adjustable", "electric", "premium", "health", "sustainable", "smart"],
+    "warranty_years": 5,
+    "certifications": ["TÜV", "GS", "CE"],
+    "in_stock": true,
+    "assembly_required": true
+  },
+  "cross_references": {
+    "related_products": ["PROD-ERGOMAX-PRO", "PROD-MONITOR-ARM-DUAL", "PROD-CABLE-KIT-PRO"],
+    "customers_purchased": ["CUST-ALT-10001", "CUST-ALT-10004"],
+    "orders_containing": ["ORD-2024-ALT-1847", "ORD-2024-ALT-2045"],
+    "reviews": ["REV-2024-0145", "REV-2024-0178"]
+  }
+}

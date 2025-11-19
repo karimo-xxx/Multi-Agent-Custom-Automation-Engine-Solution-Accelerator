@@ -1,0 +1,26 @@
+{
+  "id": "ALTYCA-PROD-001",
+  "type": "product_catalog",
+  "title": "ErgoMax Pro Serie - Premium ergonomische Bürostühle",
+  "content": "Die ErgoMax Pro Serie repräsentiert ALTYCAs Flaggschiff im Bereich ergonomischer Büromöbel und wurde speziell für Menschen entwickelt, die täglich viele Stunden am Schreibtisch verbringen. Seit der Markteinführung im März 2023 haben wir über 3.400 Einheiten verkauft und eine durchschnittliche Bewertung von 4.7/5 Sternen erreicht.\n\nProduktlinie:\n\n1. **ErgoMax Pro (PROD-ERGOMAX-PRO)** - Premium Consumer Model\n   - Preis: 649,00 EUR\n   - Zielgruppe: Home-Office, Freelancer, Gamer\n   - Besonderheiten: \n     * 4D-Armlehnen (Höhe, Breite, Tiefe, Winkel einstellbar)\n     * Synchronmechanik mit 4-facher Feststellung\n     * Lordosenstütze individuell einstellbar\n     * Nackenstütze mit Memory-Foam\n     * Atmungsaktiver Mesh-Bezug\n     * Belastbar bis 150kg\n     * 5 Jahre Garantie\n   - Farboptionen: Anthrazit, Schwarz, Dunkelblau\n   - Bestseller in der Home-Office-Kategorie\n\n2. **ErgoMax Business (PROD-ERGOMAX-BUSINESS)** - B2B Model\n   - Preis: 469,00 EUR (Einzelpreis), ab 399,00 EUR (ab 10 Stück)\n   - Zielgruppe: Unternehmen, Büros, Co-Working-Spaces\n   - Besonderheiten:\n     * 3D-Armlehnen (Höhe, Breite, Tiefe)\n     * Robustere Materialien für hohe Beanspruchung\n     * Leichter zu reinigende Oberflächen\n     * Stapelbar für Lagerung\n     * 3 Jahre Garantie + optionale Verlängerung\n   - Farboptionen: Anthrazit, Hellgrau (Corporate-Farben)\n   - Mengenrabatte verfügbar\n\nTechnische Spezifikationen:\n- Sitzhöhe: 42-55cm\n- Sitztiefe: 48-52cm verstellbar\n- Rückenlehnenhöhe: 68cm\n- Gasdruckfeder: TÜV-zertifiziert, Klasse 4\n- Rollen: für Hartboden und Teppich geeignet\n- Montage: 15-20 Minuten, Werkzeug inklusive\n\nNachhaltigkeits-Aspekte:\nDie ErgoMax Serie wird in Deutschland gefertigt (Partner: Sitwell GmbH, Schwaben) mit recycelten Materialien zu 40%. Die Verpackung besteht zu 100% aus Recycling-Karton. Carbon-Footprint pro Stuhl: 18kg CO2 (kompensiert durch Aufforstungsprojekte).\n\nKundenfeedback-Highlights:\n- \"Beste Investition für mein Home-Office\" - Sarah Weber\n- \"Nach 8 Stunden Arbeit keine Rückenschmerzen mehr\" - Michael L.\n- \"Hochwertige Verarbeitung, jeden Euro wert\" - Corporate Kunde\n\nZubehör-Empfehlungen:\n- Ergonomische Fußstütze (PROD-FOOTREST-ERGO) - 54,00 EUR\n- Lordosenkissen Premium (PROD-LUMBAR-CUSHION) - 39,00 EUR\n- Sitzflächenkissen Memory-Foam (PROD-SEAT-CUSHION) - 44,00 EUR",
+  "metadata": {
+    "product_family": "ErgoMax Pro Serie",
+    "category": "Ergonomic Furniture",
+    "sub_category": "Office Chairs",
+    "manufacturer": "Sitwell GmbH (Germany)",
+    "first_launched": "2023-03-01",
+    "units_sold": 3400,
+    "average_rating": 4.7,
+    "return_rate": 0.08,
+    "tags": ["ergonomic", "premium", "bestseller", "home-office", "b2b", "sustainable"],
+    "warranty_years": 5,
+    "certifications": ["TÜV", "GS-Zeichen", "OEKO-TEX"],
+    "in_stock": true
+  },
+  "cross_references": {
+    "related_products": ["PROD-FOOTREST-ERGO", "PROD-LUMBAR-CUSHION", "PROD-STANDING-DESK-PRO"],
+    "customers_purchased": ["CUST-ALT-10001", "CUST-ALT-10004"],
+    "orders_containing": ["ORD-2024-ALT-1847", "ORD-2024-ALT-2045"],
+    "reviews": ["REV-2024-0145", "REV-2024-0267"]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ALTYCA-CUST-004",
+  "type": "customer_profile",
+  "title": "Thomas Krüger - Geschäftskunde mit B2B-Anforderungen",
+  "content": "Thomas Krüger ist Geschäftsführer einer kleinen Marketingagentur in Frankfurt und seit Februar 2022 B2B-Kunde bei ALTYCA GmbH. Seine Firma hat über die letzten zwei Jahre hinweg Büroausstattung im Wert von 34.560 EUR bei uns erworben, was ihn zu einem unserer wichtigsten Geschäftskunden macht. Er hat den Platinum-Status im Business-Programm.\n\nDie Agentur beschäftigt 12 Mitarbeiter und Thomas hat bei ALTYCA ein komplettes Office-Setup für den neuen Standort bestellt: 12 ergonomische Bürostühle (PROD-ERGOMAX-BUSINESS), höhenverstellbare Schreibtische, Monitor-Halterungen und Meeting-Raum-Equipment. Die letzte Großbestellung (ORD-2024-ALT-2045) im Wert von 8.900 EUR wurde innerhalb von 3 Tagen geliefert.\n\nThomas schätzt besonders unseren B2B-Service: dedizierter Account Manager (Julia Becker), Rechnungskauf mit 30 Tagen Zahlungsziel und Mengenrabatte. Im Juli 2024 gab es eine Komplikation, als 3 der 12 gelieferten Stühle leichte Transportschäden aufwiesen (INC-2024-FRA-TRANSPORT-012). Unser B2B-Team reagierte sofort und ersetzte die Stühle innerhalb von 48 Stunden ohne zusätzliche Kosten.\n\nEine Besonderheit: Thomas empfiehlt ALTYCA regelmäßig in seinem Netzwerk weiter und hat bereits 3 neue B2B-Kunden vermittelt. Dafür erhielt er im Rahmen unseres Referral-Programms attraktive Bonuspunkte.\n\nKontaktpräferenzen: Telefon und E-Mail, quartalsweise Business-Review-Meetings, interessiert an neuen Produktlinien für Büros.",
+  "metadata": {
+    "customer_id": "CUST-ALT-10004",
+    "customer_name": "Thomas Krüger",
+    "company": "Krüger Marketing GmbH",
+    "location": "Frankfurt am Main, Deutschland",
+    "loyalty_tier": "Platinum Business",
+    "loyalty_points": 4234,
+    "member_since": "2022-02-08",
+    "total_orders": 31,
+    "lifetime_value": 34560.00,
+    "date_created": "2022-02-08",
+    "last_updated": "2024-11-14",
+    "tags": ["b2b", "business-customer", "referral-champion", "bulk-orders", "high-value"],
+    "priority": "Critical",
+    "department": "B2B Sales",
+    "satisfaction_score": 9.3
+  },
+  "cross_references": {
+    "orders": ["ORD-2024-ALT-2045", "ORD-2024-ALT-1890", "ORD-2023-ALT-1234"],
+    "service_interactions": ["INT-2024-JUL-0445", "INT-2024-NOV-0567"],
+    "products_purchased": ["PROD-ERGOMAX-BUSINESS", "PROD-STANDING-DESK-PRO", "PROD-MEETING-ROOM-KIT"],
+    "incidents": ["INC-2024-FRA-TRANSPORT-012"],
+    "reviews": [],
+    "related_customers": ["CUST-ALT-10023", "CUST-ALT-10034", "CUST-ALT-10056"]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "ALTYCA-CUST-009",
+  "type": "customer_profile",
+  "title": "Sophia Richter - Lifestyle-Influencerin und Markenbotschafterin",
+  "content": "Sophia Richter, 26 Jahre alt aus Düsseldorf, ist seit Juni 2023 bei ALTYCA GmbH und hat sich als wertvolle Markenbotschafterin etabliert. Die Lifestyle-Influencerin mit 45.000 Instagram-Followern hat 21 Bestellungen im Wert von 9.340 EUR getätigt und Platinum-Status erreicht.\n\nSophia kam ursprünglich durch eine Kooperation zu ALTYCA: Wir sendeten ihr ein Produkt-Sample-Paket für einen Instagram-Post. Sie war so begeistert von der Qualität, dass sie tatsächlich zur zahlenden Kundin wurde und ALTYCA regelmäßig in ihren Stories und Posts featured – organisch und authentisch.\n\nIhre Lieblingsprodukte sind aus unserer Aesthetic Home Collection: Der Marble Desk Organizer, die Gold-Accent Desk Lamp und verschiedene Instagram-taugliche Accessoires. Ihre letzte Bestellung (ORD-2024-ALT-2012) war für ein Fotoshooting ihres Home-Office-Setups, das viral ging und ALTYCA über 2.000 neue Follower brachte.\n\nSophia ist Teil unseres offiziellen Influencer-Programms und erhält 20% Rabatt auf alle Bestellungen sowie frühen Zugang zu neuen Produkten. Im Gegenzug erstellt sie quartalsweise 3-4 hochwertige Content-Pieces für ALTYCA. Unser Marketing-Team (Kontakt: Anna Schulz) pflegt eine ausgezeichnete Beziehung mit ihr.\n\nEine Besonderheit: Sophia teilt proaktiv Feedback zur Ästhetik von Produkten und Verpackungen. Einige ihrer Vorschläge wurden tatsächlich in unser Produktdesign integriert. Sie fühlt sich dadurch wertgeschätzt und ist noch engagierter.\n\nKontaktpräferenzen: Instagram DM bevorzugt, WhatsApp für dringende Marketing-Koordination, Newsletter für Influencer-Program.",
+  "metadata": {
+    "customer_id": "CUST-ALT-10009",
+    "customer_name": "Sophia Richter",
+    "location": "Düsseldorf, Deutschland",
+    "loyalty_tier": "Platinum Influencer",
+    "loyalty_points": 2134,
+    "member_since": "2023-06-05",
+    "total_orders": 21,
+    "lifetime_value": 9340.00,
+    "date_created": "2023-06-05",
+    "last_updated": "2024-11-15",
+    "tags": ["influencer", "brand-ambassador", "content-creator", "high-engagement", "aesthetic"],
+    "priority": "Critical",
+    "department": "Marketing Partnerships",
+    "satisfaction_score": 9.6,
+    "social_media": {
+      "instagram": "@sophialivesbeautifully",
+      "followers": 45000
+    }
+  },
+  "cross_references": {
+    "orders": ["ORD-2024-ALT-2012", "ORD-2024-ALT-1789", "ORD-2024-ALT-1456"],
+    "service_interactions": ["INT-2024-NOV-0456", "INT-2024-SEP-0234"],
+    "products_purchased": ["PROD-MARBLE-ORGANIZER", "PROD-GOLD-DESK-LAMP", "PROD-AESTHETIC-BUNDLE"],
+    "incidents": [],
+    "reviews": ["REV-2024-0412", "REV-2024-0334"],
+    "related_customers": [],
+    "campaigns": ["CAMP-2024-INFLUENCER-Q3", "CAMP-2024-HOME-OFFICE-AESTHETIC"]
+  }
+}

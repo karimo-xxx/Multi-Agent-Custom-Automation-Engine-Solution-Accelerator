@@ -1,0 +1,32 @@
+{
+  "id": "ALTYCA-CUST-010",
+  "type": "customer_profile",
+  "title": "Kevin Schulz - Tech-Enthusiast mit Returns-Historie",
+  "content": "Kevin Schulz, 32 Jahre alt aus Leipzig, ist seit Oktober 2022 bei ALTYCA GmbH und fällt durch sein ausgeprägtes Kauf- und Return-Verhalten auf. Als Early-Tech-Adopter hat er 34 Bestellungen im Wert von 11.230 EUR getätigt, aber auch 12 Retouren durchgeführt – eine überdurchschnittlich hohe Return-Rate von 35%. Er hat Platinum-Status.\n\nKevin ist Software-Entwickler und liebt es, neue Produkte auszuprobieren. Er bestellt häufig mehrere Varianten desselben Produkttyps, um sie zu vergleichen, und sendet dann die nicht gewählten zurück. Beispiel: Im August 2024 bestellte er 3 verschiedene mechanische Tastaturen (ORD-2024-ALT-1678), testete alle und behielt nur die mit seinen bevorzugten Brown-Switches.\n\nTrotz der hohen Return-Rate ist Kevin ein wertvoller Kunde, da er auch viele Produkte behält und ausführliche, technisch detaillierte Rezensionen schreibt. Seine Reviews sind für andere Tech-Enthusiasten extrem hilfreich. Er hat 18 Produktbewertungen mit durchschnittlich 4.2 Sternen verfasst.\n\nEin Problem trat im September 2024 auf, als eine seiner Retouren nicht korrekt im System erfasst wurde und die Erstattung sich um 2 Wochen verzögerte (INC-2024-LEI-REFUND-014). Kevin war verständlicherweise frustriert und drohte mit negativer Bewertung. Unser Returns-Team (Leitung: Frank Mueller) klärte das Problem schnell und bot eine Entschuldigung plus 30 EUR Gutschein an.\n\nKevin ist ein klassischer 'Returner' – aber durch seine Loyalität und hochwertige Reviews dennoch profitabel für ALTYCA.\n\nKontaktpräferenzen: E-Mail, Tech-Newsletter aktiv, interessiert an Beta-Tests für neue Produkte.",
+  "metadata": {
+    "customer_id": "CUST-ALT-10010",
+    "customer_name": "Kevin Schulz",
+    "location": "Leipzig, Deutschland",
+    "loyalty_tier": "Platinum",
+    "loyalty_points": 2456,
+    "member_since": "2022-10-14",
+    "total_orders": 34,
+    "total_returns": 12,
+    "return_rate": 0.35,
+    "lifetime_value": 11230.00,
+    "date_created": "2022-10-14",
+    "last_updated": "2024-11-13",
+    "tags": ["tech-enthusiast", "high-returner", "detailed-reviewer", "comparison-shopper", "beta-tester"],
+    "priority": "Medium",
+    "department": "Customer Success",
+    "satisfaction_score": 7.8
+  },
+  "cross_references": {
+    "orders": ["ORD-2024-ALT-1678", "ORD-2024-ALT-1889", "ORD-2024-ALT-2001"],
+    "service_interactions": ["INT-2024-SEP-0567", "INT-2024-AUG-0234"],
+    "products_purchased": ["PROD-MECH-KEYBOARD-BROWN", "PROD-USB-C-HUB-PRO", "PROD-MONITOR-ARM-DUAL"],
+    "incidents": ["INC-2024-LEI-REFUND-014"],
+    "reviews": ["REV-2024-0389", "REV-2024-0401", "REV-2024-0423", "REV-2024-0445"],
+    "related_customers": []
+  }
+}

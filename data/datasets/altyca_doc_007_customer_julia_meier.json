@@ -1,0 +1,30 @@
+{
+  "id": "ALTYCA-CUST-007",
+  "type": "customer_profile",
+  "title": "Julia Meier - Neue Kundin mit großem Potenzial",
+  "content": "Julia Meier, 29 Jahre alt aus Stuttgart, ist erst seit September 2024 bei ALTYCA GmbH, zeigt aber bereits großes Engagement und Kaufpotenzial. Als Projektmanagerin in einem Tech-Startup hat sie in nur 2 Monaten 5 Bestellungen im Wert von 2.890 EUR getätigt und wurde schnell zum Silber-Mitglied.\n\nJulia entdeckte ALTYCA durch eine Instagram-Werbeanzeige und war sofort von unserem modernen Design und der benutzerfreundlichen Website beeindruckt. Ihre erste Bestellung (ORD-2024-ALT-1989) war ein komplettes Home-Office-Starter-Kit, das sie für ihre neue Remote-Work-Position benötigte. Sie war begeistert von der schnellen Lieferung (2 Tage Express) und der Qualität der Produkte.\n\nBesonders positiv: Julia hat bereits 3 ausführliche Produktbewertungen geschrieben und folgt ALTYCA auf allen Social-Media-Kanälen. Sie hat an unserem Welcome-Webinar für Neukunden teilgenommen und nutzt aktiv die ALTYCA Mobile App. Ihre Freundin Sabine wurde durch Julia auf ALTYCA aufmerksam und ist nun ebenfalls Kundin (Referral-Erfolg).\n\nIm Oktober 2024 stellte Julia eine Frage zur Kompatibilität zweier Produkte über den Live-Chat (INT-2024-OCT-0678). Der Support-Agent Lisa Werner konnte ihr sofort helfen und empfahl zusätzlich ein passendes Kabelmanagement-Set, das Julia daraufhin bestellte. Sie lobte die kompetente Beratung.\n\nJulia hat großes Potenzial, eine Markenbotschafterin zu werden. Sie ist aktiv, kommunikativ und hat ein großes Netzwerk.\n\nKontaktpräferenzen: App-Benachrichtigungen bevorzugt, alle Newsletter aktiv, interessiert an exklusiven Launches.",
+  "metadata": {
+    "customer_id": "CUST-ALT-10007",
+    "customer_name": "Julia Meier",
+    "location": "Stuttgart, Deutschland",
+    "loyalty_tier": "Silver",
+    "loyalty_points": 567,
+    "member_since": "2024-09-12",
+    "total_orders": 5,
+    "lifetime_value": 2890.00,
+    "date_created": "2024-09-12",
+    "last_updated": "2024-11-16",
+    "tags": ["new-customer", "high-potential", "social-media-active", "referral-source", "early-adopter"],
+    "priority": "Medium",
+    "department": "Customer Success",
+    "satisfaction_score": 9.8
+  },
+  "cross_references": {
+    "orders": ["ORD-2024-ALT-1989", "ORD-2024-ALT-2001", "ORD-2024-ALT-2034"],
+    "service_interactions": ["INT-2024-OCT-0678", "INT-2024-SEP-0234"],
+    "products_purchased": ["PROD-HOME-OFFICE-STARTER", "PROD-CABLE-MANAGEMENT-KIT", "PROD-DESK-MAT-PRO"],
+    "incidents": [],
+    "reviews": ["REV-2024-0478", "REV-2024-0489", "REV-2024-0501"],
+    "related_customers": ["CUST-ALT-10045"]
+  }
+}

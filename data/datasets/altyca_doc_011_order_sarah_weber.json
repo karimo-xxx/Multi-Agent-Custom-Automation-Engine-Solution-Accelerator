@@ -1,0 +1,32 @@
+{
+  "id": "ALTYCA-ORD-001",
+  "type": "order_fulfillment",
+  "title": "Bestellung ORD-2024-ALT-1847 - Sarah Weber Home-Office Premium Setup",
+  "content": "Bestellung ORD-2024-ALT-1847 wurde am 18. Oktober 2024 von Sarah Weber (CUST-ALT-10001) aufgegeben und stellt eine ihrer größten Einzelbestellungen bei ALTYCA GmbH dar. Der Gesamtwert beträgt 2.847,50 EUR und umfasst hochwertige Büromöbel für ihr neu eingerichtetes Home-Office.\n\nBestellte Produkte:\n1. ErgoMax Pro Schreibtischstuhl (PROD-ERGOMAX-PRO) - 649,00 EUR\n   - Farbe: Anthrazit, höhenverstellbar, Lordosenstütze, Armlehnen 4D\n2. SmartDesk Premium höhenverstellbarer Schreibtisch (PROD-SMARTDESK-PREMIUM) - 1.899,00 EUR\n   - Größe: 180x80cm, elektrisch höhenverstellbar, Memory-Funktion, Bambus-Oberfläche\n3. Cable Management Pro Kit (PROD-CABLE-KIT-PRO) - 89,50 EUR\n4. Ergonomische Fußstütze (PROD-FOOTREST-ERGO) - 54,00 EUR\n5. LED Desk Light Strip Set (PROD-LED-STRIP-DESK) - 156,00 EUR\n\nVersand: Kostenloser Express-Versand (Platinum-Vorteil, regulär 29,99 EUR)\nLieferadresse: Maximilianstraße 42, 80539 München\nZahlungsmethode: PayPal (sofort bestätigt)\n\nBestellstatus-Timeline:\n- 18.10.2024 09:23 - Bestellung eingegangen\n- 18.10.2024 11:45 - Zahlung bestätigt\n- 19.10.2024 14:30 - Kommissionierung abgeschlossen im Lager München-Nord\n- 20.10.2024 08:15 - Versandt via DHL Express\n- 21.10.2024 10:42 - Erfolgreich zugestellt, Unterschrift Sarah Weber\n\nBesonderheiten: Sarah nutzte 500 Loyalty-Punkte für einen zusätzlichen Rabatt von 25 EUR. Die Lieferung erfolgte in umweltfreundlicher Verpackung auf Kundenwunsch. Der Schreibtisch wurde vormontiert geliefert und konnte laut Kundenfeedback in unter 30 Minuten aufgebaut werden.\n\nNachverfolgung: Sarah schrieb am 23.10.2024 eine begeisterte 5-Sterne-Bewertung (REV-2024-0145) und teilte Fotos ihres neuen Setups auf Instagram mit ALTYCA-Tag.",
+  "metadata": {
+    "order_id": "ORD-2024-ALT-1847",
+    "customer_id": "CUST-ALT-10001",
+    "customer_name": "Sarah Weber",
+    "order_date": "2024-10-18",
+    "delivery_date": "2024-10-21",
+    "total_amount": 2847.50,
+    "discount_applied": 25.00,
+    "loyalty_points_used": 500,
+    "loyalty_points_earned": 284,
+    "status": "Delivered",
+    "payment_method": "PayPal",
+    "shipping_method": "Express",
+    "warehouse": "Munich-North",
+    "tags": ["home-office", "premium", "express-delivery", "eco-packaging", "high-value"],
+    "priority": "High",
+    "department": "Order Fulfillment"
+  },
+  "cross_references": {
+    "customer": "CUST-ALT-10001",
+    "products": ["PROD-ERGOMAX-PRO", "PROD-SMARTDESK-PREMIUM", "PROD-CABLE-KIT-PRO", "PROD-FOOTREST-ERGO", "PROD-LED-STRIP-DESK"],
+    "service_interactions": [],
+    "incidents": [],
+    "reviews": ["REV-2024-0145"],
+    "related_orders": ["ORD-2024-ALT-1623"]
+  }
+}

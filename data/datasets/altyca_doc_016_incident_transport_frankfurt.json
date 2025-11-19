@@ -1,0 +1,31 @@
+{
+  "id": "ALTYCA-INC-002",
+  "type": "incident_report",
+  "title": "Transport Incident - Beschädigte Stühle bei B2B Lieferung Frankfurt",
+  "content": "Am 20. Juli 2024 wurde der Incident INC-2024-FRA-TRANSPORT-012 gemeldet, nachdem bei einer B2B-Großlieferung an die Krüger Marketing GmbH (Kunde Thomas Krüger, CUST-ALT-10004) drei von zwölf gelieferten Bürostühlen leichte Transportschäden aufwiesen. Der Vorfall wurde als 'Medium' eingestuft, aufgrund der B2B-Relevanz jedoch mit hoher Priorität behandelt.\n\nVorfall-Beschreibung:\nIm Rahmen der Bestellung ORD-2024-ALT-1890 (Vorgänger der großen Bestellung 2045) wurden 12 ErgoMax Business Bürostühle an den Frankfurter Standort von Krüger Marketing geliefert. Bei der Warenannahme stellte Herr Krüger fest, dass drei Stühle beschädigt waren:\n- Stuhl #3: Kratzer auf der Armlehne (ca. 3cm)\n- Stuhl #7: Delle in der Rückenlehne, rechts oben\n- Stuhl #11: Gerissener Bezugsstoff an der Sitzfläche (ca. 2cm Naht)\n\nUrsachenanalyse:\nDie Untersuchung ergab, dass die Schäden während des Transports entstanden sind. Der beauftragte Speditionspartner (LogTrans GmbH) hatte die Palette mit den Stühlen nicht ordnungsgemäß gesichert. Bei einer Vollbremsung auf der A5 rutschte die Ladung und die Stühle kollidierten miteinander. Der LKW-Fahrer dokumentierte dies im Frachtbrief, informierte jedoch nicht proaktiv das ALTYCA Warehouse.\n\nSofortmaßnahmen:\n- 20.07.2024 15:30 Uhr: Meldung durch Thomas Krüger an Account Manager Julia Becker\n- 20.07.2024 16:00 Uhr: B2B-Team informiert, Fotodokumentation angefordert\n- 21.07.2024 09:00 Uhr: Ersatzstühle im Lager Frankfurt-Süd reserviert\n- 22.07.2024 08:00 Uhr: Express-Abholung der beschädigten Stühle\n- 22.07.2024 14:00 Uhr: Ersatzstühle per ALTYCA-eigener Lieferung zugestellt\n- 23.07.2024: Qualitätsprüfung der beschädigten Stühle bestätigt Transportschaden\n\nKundenservice:\nAccount Manager Julia Becker übernahm die persönliche Koordination. Thomas Krüger erhielt keine zusätzlichen Kosten für Austausch und Abholung. Als Entschuldigung wurde dem Kunden ein 200 EUR Gutschein für die nächste Bestellung sowie 500 zusätzliche B2B-Bonuspunkte gutgeschrieben.\n\nFinanzielle Auswirkung:\n- Warenschaden: 3 Stühle à 399 EUR = 1.197 EUR (Einkaufspreis: ca. 800 EUR)\n- Logistikkosten (Express-Ersatz): 145 EUR\n- Gutschein & Bonuspunkte: 250 EUR Gegenwert\n- Gesamt: ca. 1.195 EUR\n\nNachbearbeitung:\nDie Zusammenarbeit mit LogTrans GmbH wurde kritisch evaluiert. Der Speditionspartner erhielt eine formelle Beschwerde und muss nun alle Transporte mit Ladungssicherungs-Fotos dokumentieren. ALTYCA prüft alternative Speditionspartner für B2B-Lieferungen.",
+  "metadata": {
+    "incident_id": "INC-2024-FRA-TRANSPORT-012",
+    "incident_date": "2024-07-20",
+    "incident_type": "Transport/Damage",
+    "severity": "Medium",
+    "location": "In Transit (A5 Frankfurt)",
+    "affected_customers": 1,
+    "affected_orders": 1,
+    "financial_impact": 1195.00,
+    "resolved_date": "2024-07-23",
+    "status": "Resolved",
+    "tags": ["transport", "damage", "b2b", "logistics", "freight", "quality-issue"],
+    "priority": "High",
+    "department": "B2B Operations",
+    "responsible": "Julia Becker (Account Manager)",
+    "external_party": "LogTrans GmbH (Freight Partner)"
+  },
+  "cross_references": {
+    "affected_customers": ["CUST-ALT-10004"],
+    "affected_orders": ["ORD-2024-ALT-1890"],
+    "service_interactions": ["INT-2024-JUL-0445"],
+    "products": ["PROD-ERGOMAX-BUSINESS"],
+    "related_incidents": [],
+    "follow_up_tasks": ["TASK-2024-FREIGHT-PARTNER-REVIEW"]
+  }
+}

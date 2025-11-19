@@ -92,6 +92,18 @@ class AppConfig:
         )
         self.AZURE_AI_SEARCH_ENDPOINT = self._get_optional("AZURE_AI_SEARCH_ENDPOINT")
         self.AZURE_AI_SEARCH_API_KEY = self._get_optional("AZURE_AI_SEARCH_API_KEY")
+        
+        # Azure OpenAI Embedding configuration for hybrid search
+        self.AZURE_OPENAI_EMBEDDING_DEPLOYMENT = self._get_optional(
+            "AZURE_OPENAI_EMBEDDING_DEPLOYMENT"
+        )
+        self.AZURE_OPENAI_EMBEDDING_MODEL = self._get_optional(
+            "AZURE_OPENAI_EMBEDDING_MODEL", "text-embedding-3-large"
+        )
+        self.AZURE_OPENAI_EMBEDDING_DIMENSIONS = self._get_optional(
+            "AZURE_OPENAI_EMBEDDING_DIMENSIONS", "3072"
+        )
+        
         # self.BING_CONNECTION_NAME = self._get_optional("BING_CONNECTION_NAME")
 
         test_team_json = self._get_optional("TEST_TEAM_JSON")

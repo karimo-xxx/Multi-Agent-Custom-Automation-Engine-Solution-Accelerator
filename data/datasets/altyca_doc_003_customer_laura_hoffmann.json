@@ -1,0 +1,30 @@
+{
+  "id": "ALTYCA-CUST-003",
+  "type": "customer_profile",
+  "title": "Laura Hoffmann - Budget-Bewusste Studentin mit hoher Zufriedenheit",
+  "content": "Laura Hoffmann ist 22 Jahre alt, studiert Grafikdesign in Berlin und kauft seit August 2023 bei ALTYCA GmbH ein. Obwohl ihr Budget als Studentin begrenzt ist, schätzt sie unser Preis-Leistungs-Verhältnis und die Studenten-Rabatte, die wir regelmäßig anbieten. Mit 12 Bestellungen im Wert von 2.340 EUR ist sie eine treue Silber-Kundin.\n\nLaura nutzt ALTYCA hauptsächlich für ihr Studium: Sie bestellte ein erschwingliches Grafiktablett (PROD-CREATIVE-TAB-BASIC), eine minimalistische Schreibtischlampe und verschiedene Organisationsprodukte für ihr WG-Zimmer. Ihre letzte Bestellung (ORD-2024-ALT-1678) war ein Studentenpaket mit Notizblöcken, ergonomischer Maus und Laptop-Ständer.\n\nBesonders positiv: Laura schreibt regelmäßig ehrliche Produktbewertungen und hat uns auf Social Media markiert, als sie ihr neues Zimmer-Setup präsentierte. Sie ist aktives Mitglied in unserer ALTYCA Student Community und hat an zwei unserer Online-Workshops teilgenommen.\n\nIm Oktober 2024 gab es eine Verzögerung bei ihrer Lieferung aufgrund eines Logistik-Problems (INC-2024-BERLIN-LOG-005). Unser Team bot ihr proaktiv einen 15% Rabatt-Gutschein an, den sie beim nächsten Einkauf einlösen konnte. Laura zeigte großes Verständnis und lobte unsere transparente Kommunikation.\n\nKontaktpräferenzen: Instagram DMs bevorzugt, Newsletter für Studenten-Deals aktiv, interessiert an Nachhaltigkeits-Initiativen.",
+  "metadata": {
+    "customer_id": "CUST-ALT-10003",
+    "customer_name": "Laura Hoffmann",
+    "location": "Berlin, Deutschland",
+    "loyalty_tier": "Silver",
+    "loyalty_points": 456,
+    "member_since": "2023-08-12",
+    "total_orders": 12,
+    "lifetime_value": 2340.00,
+    "date_created": "2023-08-12",
+    "last_updated": "2024-11-05",
+    "tags": ["student", "budget-conscious", "social-media-active", "sustainability", "design"],
+    "priority": "Low",
+    "department": "Customer Success",
+    "satisfaction_score": 8.8
+  },
+  "cross_references": {
+    "orders": ["ORD-2024-ALT-1678", "ORD-2024-ALT-1234", "ORD-2023-ALT-0567"],
+    "service_interactions": ["INT-2024-OCT-0789"],
+    "products_purchased": ["PROD-CREATIVE-TAB-BASIC", "PROD-DESK-LAMP-MINI", "PROD-STUDENT-BUNDLE"],
+    "incidents": ["INC-2024-BERLIN-LOG-005"],
+    "reviews": ["REV-2024-0334", "REV-2024-0112"],
+    "related_customers": []
+  }
+}

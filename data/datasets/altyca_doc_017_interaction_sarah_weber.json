@@ -1,0 +1,30 @@
+{
+  "id": "ALTYCA-INT-001",
+  "type": "service_interaction",
+  "title": "Customer Service Chat - Sarah Weber fragt zu Sonic Wave Headset",
+  "content": "Service-Interaktion INT-2024-NOV-0234 dokumentiert einen Live-Chat zwischen Sarah Weber (CUST-ALT-10001) und Customer-Service-Agent Maria Hoffmann am 12. November 2024. Die Interaktion verlief äußerst positiv und führte direkt zu einer Bestellung im Wert von 518 EUR.\n\nKontext:\nSarah Weber, eine unserer Platinum-Kundinnen, entdeckte über unseren Newsletter das neue Sonic Wave Noise-Cancelling Headset (PROD-SONIC-WAVE-HEADSET), das erst seit einer Woche im Sortiment ist. Sie initiierte um 14:23 Uhr einen Live-Chat über die ALTYCA-Website.\n\nChat-Zusammenfassung:\n\nSarah [14:23]: \"Hallo! Ich interessiere mich für das neue Sonic Wave Headset. Können Sie mir mehr über die Noise-Cancelling-Funktion erzählen? Ich arbeite viel in Co-Working-Spaces und brauche etwas Effektives.\"\n\nMaria [14:24]: \"Hallo Sarah! Schön, von Ihnen zu hören. Das Sonic Wave nutzt hybrides ANC (Active Noise Cancelling) mit 8 Mikrofonen. Es filtert Umgebungsgeräusche bis zu 42dB. Für Co-Working-Spaces ideal, da es besonders Stimmen und Tastaturgeräusche effektiv reduziert.\"\n\nSarah [14:25]: \"Das klingt gut! Wie sieht es mit der Akkulaufzeit aus? Und ist es kompatibel mit Mac und Windows?\"\n\nMaria [14:26]: \"Akkulaufzeit: bis zu 35 Stunden mit ANC, 45 Stunden ohne. USB-C Schnellladung: 10 Minuten = 5 Stunden Wiedergabe. Ja, voll kompatibel mit Mac, Windows, iOS und Android. Es hat auch Multipoint-Verbindung – Sie können es gleichzeitig mit Laptop und Smartphone verbinden.\"\n\nSarah [14:27]: \"Perfekt! Gibt es auch unterschiedliche Farboptionen?\"\n\nMaria [14:27]: \"Aktuell in Midnight Black und Cloud Silver verfügbar. Beide Varianten haben die gleiche Ausstattung.\"\n\nSarah [14:29]: \"Ich nehme das in Silver. Tatsächlich würde ich gerne zwei bestellen – eines für mich und eines als Geschenk für einen Kollegen. Gibt es da einen Mengenrabatt?\"\n\nMaria [14:30]: \"Großartig! Für Platinum-Mitglieder wie Sie gibt es bei 2+ Artikeln automatisch 10% Rabatt. Das würde bei 2 Headsets (je 259 EUR) einen Rabatt von 51,80 EUR bedeuten. Ihr Endpreis wäre 466,20 EUR statt 518 EUR.\"\n\nSarah [14:31]: \"Super, das ist ein tolles Angebot. Können Sie die Bestellung für mich anlegen?\"\n\nMaria [14:32]: \"Sehr gerne! Ich lege die Bestellung jetzt für Sie an: 2x Sonic Wave Headset Silver. Express-Versand ist für Sie als Platinum-Mitglied kostenlos. Sie erhalten die Bestätigung per E-Mail und die Headsets in 2-3 Werktagen. Noch etwas, das ich für Sie tun kann?\"\n\nSarah [14:33]: \"Nein, das war perfekter Service! Vielen Dank, Maria. Bis bald!\"\n\nErgebnis:\nBestellung ORD-2024-ALT-2067 wurde erfolgreich angelegt. Sarah war sehr zufrieden mit der schnellen und kompetenten Beratung. Maria dokumentierte die Interaktion mit 'Excellent Outcome'. Sarah gab nachträglich ein positives Feedback über die Post-Chat-Umfrage (5/5 Sterne).",
+  "metadata": {
+    "interaction_id": "INT-2024-NOV-0234",
+    "interaction_date": "2024-11-12",
+    "interaction_time": "14:23-14:34",
+    "duration_minutes": 11,
+    "channel": "Live Chat (Website)",
+    "customer_id": "CUST-ALT-10001",
+    "customer_name": "Sarah Weber",
+    "agent_name": "Maria Hoffmann",
+    "agent_id": "AGENT-045",
+    "interaction_type": "Product Inquiry",
+    "outcome": "Sale Completed",
+    "satisfaction_rating": 5.0,
+    "tags": ["product-inquiry", "sale", "excellent-service", "platinum-customer", "multi-item"],
+    "priority": "Medium",
+    "department": "Customer Service"
+  },
+  "cross_references": {
+    "customer": "CUST-ALT-10001",
+    "orders": ["ORD-2024-ALT-2067"],
+    "products": ["PROD-SONIC-WAVE-HEADSET"],
+    "related_interactions": ["INT-2024-JUN-0891"],
+    "incidents": []
+  }
+}

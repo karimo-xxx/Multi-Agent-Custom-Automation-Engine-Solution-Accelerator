@@ -18,7 +18,7 @@
       "use_mcp": false,
       "use_bing": false,
       "use_reasoning": false,
-      "index_name": "macae-index",
+      "index_name": "macae-hybrid-index",
       "index_foundry_name": "",
       "index_endpoint": "",
       "coding_tools": false
@@ -35,7 +35,7 @@
       "use_mcp": false,
       "use_bing": false,
       "use_reasoning": false,
-      "index_name": "macae-index",
+      "index_name": "macae-hybrid-index",
       "index_foundry_name": "",
       "coding_tools": false
     },
@@ -80,7 +80,7 @@
     {
       "id": "task-1",
       "name": "Satisfaction Plan",
-      "prompt": "Analyze the satisfaction of Emily Thompson with Contoso.  If needed, provide a plan to increase her satisfaction.",
+      "prompt": "Analyze the satisfaction of Sarah Weber with ALTYCA GmbH. If needed, provide a plan to increase her satisfaction.",
       "created": "",
       "creator": "",
       "logo": ""

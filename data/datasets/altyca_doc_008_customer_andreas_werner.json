@@ -1,0 +1,30 @@
+{
+  "id": "ALTYCA-CUST-008",
+  "type": "customer_profile",
+  "title": "Andreas Werner - Senioren-Kunde mit spezifischen Bedürfnissen",
+  "content": "Andreas Werner, 68 Jahre alt aus Hannover, ist seit März 2023 bei ALTYCA GmbH und repräsentiert unsere wachsende Zielgruppe der Silver Surfer. Als pensionierter Lehrer hat er in den letzten 18 Monaten 9 Bestellungen im Wert von 4.120 EUR getätigt und ist Bronze-Mitglied mit steigender Tendenz.\n\nAndreas kam über eine Empfehlung seines Enkels zu ALTYCA und suchte zunächst nach einfach zu bedienenden Produkten für sein neues Hobby: Digitale Fotografie. Er bestellte ein Tablet mit großem Display (PROD-TABLET-SENIOR-PLUS), eine vergrößerte Tastatur und einen ergonomischen Maus mit gutem Grip. Seine letzte Bestellung (ORD-2024-ALT-1756) umfasste einen Fotodrucker für seine Reisebilder.\n\nBesonders: Andreas ruft häufig den telefonischen Support an, da er die Website manchmal als komplex empfindet. Unser Customer-Care-Team (besonders Mitarbeiterin Sandra Klein) hat eine ausgezeichnete Beziehung zu ihm aufgebaut und hilft geduldig bei allen Fragen. Andreas erwähnte mehrfach, wie wichtig ihm der persönliche Kontakt ist.\n\nIm Juli 2024 gab es eine Situation, als Andreas versehentlich eine doppelte Bestellung aufgab (INC-2024-HAN-DUPLICATE-009). Sandra konnte dies rechtzeitig erkennen und stornierte eine Bestellung, bevor sie versandt wurde. Andreas war erleichtert und dankbar für die Aufmerksamkeit.\n\nAndreas ist ein Beispiel dafür, wie wichtig exzellenter Telefonsupport und seniorenfreundliche Produkte sind. Er hat uns wertvolles Feedback zur Website-Usability gegeben.\n\nKontaktpräferenzen: Telefon stark bevorzugt, E-Mail nur für Bestellbestätigungen, kein Social Media.",
+  "metadata": {
+    "customer_id": "CUST-ALT-10008",
+    "customer_name": "Andreas Werner",
+    "location": "Hannover, Deutschland",
+    "loyalty_tier": "Bronze",
+    "loyalty_points": 678,
+    "member_since": "2023-03-28",
+    "total_orders": 9,
+    "lifetime_value": 4120.00,
+    "date_created": "2023-03-28",
+    "last_updated": "2024-11-03",
+    "tags": ["senior-customer", "phone-support", "simple-products", "loyal", "feedback-provider"],
+    "priority": "Medium",
+    "department": "Customer Care",
+    "satisfaction_score": 8.9
+  },
+  "cross_references": {
+    "orders": ["ORD-2024-ALT-1756", "ORD-2024-ALT-1345", "ORD-2023-ALT-0456"],
+    "service_interactions": ["INT-2024-NOV-0045", "INT-2024-JUL-0234", "INT-2024-APR-0567"],
+    "products_purchased": ["PROD-TABLET-SENIOR-PLUS", "PROD-KEYBOARD-LARGE", "PROD-PHOTO-PRINTER"],
+    "incidents": ["INC-2024-HAN-DUPLICATE-009"],
+    "reviews": ["REV-2024-0267"],
+    "related_customers": []
+  }
+}

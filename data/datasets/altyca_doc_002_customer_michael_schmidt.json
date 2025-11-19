@@ -1,0 +1,30 @@
+{
+  "id": "ALTYCA-CUST-002",
+  "type": "customer_profile",
+  "title": "Michael Schmidt - Stammkunde mit Fokus auf Gaming-Equipment",
+  "content": "Michael Schmidt, 28 Jahre alt aus Hamburg, ist seit Januar 2023 bei ALTYCA GmbH registriert und hat sich als passionierter Gamer und Streaming-Equipment-Enthusiast einen Namen gemacht. Mit 18 Bestellungen und einem Gesamtwert von 8.920 EUR gehört er zu unseren wertvollen Gold-Mitgliedern.\n\nMichael betreibt einen erfolgreichen Twitch-Kanal und nutzt ausschließlich ALTYCA-Produkte für sein Setup. Seine letzte große Investition war das ProStream Studio-Paket (ORD-2024-ALT-1923), bestehend aus dem UltraWide Gaming-Monitor, der RGB-Beleuchtung Pro und dem StreamMaster Mikrofonarm. Er dokumentierte den Aufbau seines Studios auf Social Media und generierte dadurch organische Reichweite für ALTYCA.\n\nIm September 2024 kontaktierte Michael unseren Support wegen eines defekten USB-Hubs aus seinem ursprünglichen Setup. Unser Kundenservice-Team (bearbeitet von Thomas Müller) konnte das Problem innerhalb von 24 Stunden lösen und sendete kostenlos Ersatz. Michael war von der schnellen Reaktion begeistert und erwähnte dies in einem seiner Streams.\n\nEine Besonderheit: Michael nutzt häufig unsere Ratenzahlungs-Option für größere Anschaffungen und zahlt stets pünktlich. Er hat uns auch wertvolles Feedback zur Verbesserung unserer Produktfilter für Gaming-Zubehör gegeben.\n\nKontaktpräferenzen: WhatsApp Business bevorzugt, abonniert Gaming-Newsletter, interessiert an Early-Access zu neuen Gaming-Produkten.",
+  "metadata": {
+    "customer_id": "CUST-ALT-10002",
+    "customer_name": "Michael Schmidt",
+    "location": "Hamburg, Deutschland",
+    "loyalty_tier": "Gold",
+    "loyalty_points": 1856,
+    "member_since": "2023-01-20",
+    "total_orders": 18,
+    "lifetime_value": 8920.00,
+    "date_created": "2023-01-20",
+    "last_updated": "2024-11-08",
+    "tags": ["gaming", "streaming", "influencer", "ratenzahlung", "social-media"],
+    "priority": "Medium",
+    "department": "Customer Success",
+    "satisfaction_score": 9.2
+  },
+  "cross_references": {
+    "orders": ["ORD-2024-ALT-1923", "ORD-2024-ALT-1456", "ORD-2023-ALT-0234"],
+    "service_interactions": ["INT-2024-SEP-0456"],
+    "products_purchased": ["PROD-PROSTREAM-STUDIO", "PROD-ULTRAWIDE-MONITOR", "PROD-RGB-LIGHTING-PRO"],
+    "incidents": ["INC-2024-USB-HUB-001"],
+    "reviews": ["REV-2024-0223"],
+    "related_customers": []
+  }
+}

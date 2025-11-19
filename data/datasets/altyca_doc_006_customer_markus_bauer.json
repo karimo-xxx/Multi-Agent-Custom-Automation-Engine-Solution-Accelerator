@@ -1,0 +1,30 @@
+{
+  "id": "ALTYCA-CUST-006",
+  "type": "customer_profile",
+  "title": "Markus Bauer - Unzufriedener Kunde mit Eskalationshistorie",
+  "content": "Markus Bauer, 37 Jahre alt aus Köln, ist seit November 2023 bei ALTYCA GmbH registriert und hatte leider eine holprige Customer Journey mit mehreren negativen Erlebnissen. Mit 8 Bestellungen im Wert von 3.450 EUR hat er Bronze-Status, jedoch eine unterdurchschnittliche Zufriedenheit von 5.2/10.\n\nDas erste große Problem trat im März 2024 auf, als seine Bestellung (ORD-2024-ALT-1123) mit einem defekten Wireless Keyboard geliefert wurde. Der Ersatz verzögerte sich aufgrund eines Lagerfehlers um 10 Tage (INC-2024-COLOGNE-DEL-003), was Markus frustrierte, da er das Keyboard dringend für ein Kundenprojekt benötigte. Er verfasste eine negative Bewertung auf Trustpilot.\n\nIm Juni 2024 eskalierte eine weitere Situation: Markus bestellte einen Gaming-Stuhl (ORD-2024-ALT-1567), der mit sichtbaren Kratzern ankam. Der Rückversand gestaltete sich kompliziert, da das Return-Label zunächst nicht funktionierte. Nach Intervention unseres Senior Customer Success Managers (Stefan Werner) wurde das Problem gelöst und Markus erhielt nicht nur einen neuen Stuhl, sondern auch eine Entschuldigung und einen 50 EUR Gutschein.\n\nTrotz dieser Bemühungen bleibt Markus skeptisch. Er hat den Newsletter abbestellt und kauft nur noch gelegentlich bei ALTYCA. Unsere letzte Kontaktaufnahme im Oktober 2024 (INT-2024-OCT-0234) zielte darauf ab, das Vertrauen wiederherzustellen. Markus gab an, dass er ALTYCA eine letzte Chance gibt.\n\nKontaktpräferenzen: Telefon bevorzugt bei Problemen, Newsletter abbestellt, empfindlich gegenüber Lieferverzögerungen.",
+  "metadata": {
+    "customer_id": "CUST-ALT-10006",
+    "customer_name": "Markus Bauer",
+    "location": "Köln, Deutschland",
+    "loyalty_tier": "Bronze",
+    "loyalty_points": 234,
+    "member_since": "2023-11-15",
+    "total_orders": 8,
+    "lifetime_value": 3450.00,
+    "date_created": "2023-11-15",
+    "last_updated": "2024-10-28",
+    "tags": ["at-risk", "escalation-history", "quality-issues", "delivery-problems", "negative-reviews"],
+    "priority": "High",
+    "department": "Customer Retention",
+    "satisfaction_score": 5.2
+  },
+  "cross_references": {
+    "orders": ["ORD-2024-ALT-1567", "ORD-2024-ALT-1123", "ORD-2024-ALT-0678"],
+    "service_interactions": ["INT-2024-OCT-0234", "INT-2024-JUN-0567", "INT-2024-MAR-0123"],
+    "products_purchased": ["PROD-GAMING-CHAIR-PRO", "PROD-WIRELESS-KEYBOARD-X"],
+    "incidents": ["INC-2024-COLOGNE-DEL-003", "INC-2024-QUALITY-CHAIR-078"],
+    "reviews": ["REV-2024-0089-NEGATIVE", "REV-2024-0156-NEGATIVE"],
+    "related_customers": []
+  }
+}

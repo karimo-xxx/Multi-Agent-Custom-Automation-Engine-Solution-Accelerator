@@ -1,0 +1,30 @@
+{
+  "id": "ALTYCA-CUST-001",
+  "type": "customer_profile",
+  "title": "Sarah Weber - Premium Kundin und Technologie-Enthusiastin",
+  "content": "Sarah Weber ist seit März 2023 Kundin bei ALTYCA GmbH und hat sich schnell zu einer unserer wertvollsten Stammkundinnen entwickelt. Die 34-jährige Softwareentwicklerin aus München schätzt besonders unser Premium-Sortiment an ergonomischen Büromöbeln und technischen Gadgets. Mit einem Bestellvolumen von über 12.450 EUR in den letzten 18 Monaten gehört sie zu unseren Top 5% Kunden.\n\nSarah hat den Platinum-Status in unserem ALTYCA Loyalty-Programm erreicht und nutzt regelmäßig ihre exklusiven Vorteile wie kostenlosen Express-Versand und Priority-Support. Ihre letzte Bestellung (ORD-2024-ALT-1847) umfasste den ErgoMax Pro Schreibtischstuhl und das höhenverstellbare SmartDesk Premium-Modell für ihr neues Home-Office.\n\nBesonders hervorzuheben ist Sarahs konstruktives Feedback: Sie hat uns mehrfach detaillierte Produktrezensionen geschickt und war maßgeblich an der Verbesserung unserer Produktbeschreibungen beteiligt. Im Juni 2024 nahm sie an unserem Beta-Programm für die neue ALTYCA Mobile App teil und lieferte wertvolle Usability-Insights.\n\nLetzte Interaktion: 12. November 2024 - Anfrage zum neuen Sonic Wave Noise-Cancelling Headset. Kundenservice-Agent Maria Hoffmann konnte alle technischen Fragen beantworten und Sarah bestellte umgehend zwei Geräte (eines als Geschenk für einen Kollegen).\n\nKontaktpräferenzen: E-Mail bevorzugt, Newsletter-Abonnement aktiv, Push-Benachrichtigungen für exklusive Angebote aktiviert.",
+  "metadata": {
+    "customer_id": "CUST-ALT-10001",
+    "customer_name": "Sarah Weber",
+    "location": "München, Deutschland",
+    "loyalty_tier": "Platinum",
+    "loyalty_points": 2847,
+    "member_since": "2023-03-15",
+    "total_orders": 23,
+    "lifetime_value": 12450.00,
+    "date_created": "2023-03-15",
+    "last_updated": "2024-11-12",
+    "tags": ["premium-customer", "tech-enthusiast", "home-office", "beta-tester", "high-value"],
+    "priority": "High",
+    "department": "Customer Success",
+    "satisfaction_score": 9.5
+  },
+  "cross_references": {
+    "orders": ["ORD-2024-ALT-1847", "ORD-2024-ALT-1623", "ORD-2023-ALT-0892"],
+    "service_interactions": ["INT-2024-NOV-0234", "INT-2024-JUN-0891"],
+    "products_purchased": ["PROD-ERGOMAX-PRO", "PROD-SMARTDESK-PREMIUM", "PROD-SONIC-WAVE-HEADSET"],
+    "incidents": [],
+    "reviews": ["REV-2024-0145", "REV-2024-0067"],
+    "related_customers": []
+  }
+}

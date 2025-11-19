@@ -1,0 +1,34 @@
+{
+  "id": "ALTYCA-ORD-003",
+  "type": "order_fulfillment",
+  "title": "Bestellung ORD-2024-ALT-1567 - Markus Bauer Gaming-Stuhl mit Qualitätsproblem",
+  "content": "Bestellung ORD-2024-ALT-1567 wurde am 15. Juni 2024 von Markus Bauer (CUST-ALT-10006) aufgegeben und entwickelte sich leider zu einem problematischen Fall mit Qualitätsmängeln und Eskalation. Der Gesamtwert betrug 549,00 EUR.\n\nBestelltes Produkt:\n1. Gaming Chair Pro Max (PROD-GAMING-CHAIR-PRO) - 549,00 EUR\n   - Farbe: Schwarz/Rot, Lederimitat, verstellbare Armlehnen, Lordosenstütze\n\nVersand: Standard-Versand (9,99 EUR)\nLieferadresse: Ehrenstraße 78, 50672 Köln\nZahlungsmethode: Kreditkarte (sofort belastet)\n\nBestellstatus-Timeline:\n- 15.06.2024 11:15 - Bestellung eingegangen\n- 15.06.2024 13:40 - Zahlung bestätigt\n- 17.06.2024 09:00 - Kommissionierung, Lager Köln-West\n- 18.06.2024 10:20 - Versandt via DPD\n- 20.06.2024 14:35 - Zustellung, Unterschrift Markus Bauer\n- 20.06.2024 17:22 - Reklamation eingegangen (Kratzer auf Rückenlehne)\n- 21.06.2024 10:00 - Rücksendelabel angefordert (technisches Problem)\n- 23.06.2024 15:30 - Neues Rücksendelabel per E-Mail\n- 25.06.2024 - Retoure beim Lager eingegangen\n- 28.06.2024 - Qualitätsprüfung bestätigt: Transportschaden\n- 30.06.2024 - Ersatzstuhl versandt\n- 02.07.2024 - Ersatzstuhl zugestellt (einwandfrei)\n\nProblembeschreibung: Bei Ankunft wies der Stuhl deutlich sichtbare Kratzer auf der Rückenlehne auf (ca. 8cm lang), vermutlich durch unsachgemäße Handhabung im Versand entstanden. Markus dokumentierte dies mit Fotos und kontaktierte sofort unseren Support.\n\nEskalation: Das Return-Label funktionierte initial nicht (INC-2024-QUALITY-CHAIR-078), was zu zusätzlicher Frustration führte. Senior Customer Success Manager Stefan Werner übernahm den Fall persönlich und koordinierte Express-Ersatz. Markus erhielt zusätzlich einen 50 EUR Gutschein als Entschuldigung.\n\nNachbearbeitung: Unser Qualitätsmanagement prüfte den Vorfall und identifizierte unzureichende Verpackung als Ursache. Verpackungsstandards für Stühle wurden daraufhin verschärft.",
+  "metadata": {
+    "order_id": "ORD-2024-ALT-1567",
+    "customer_id": "CUST-ALT-10006",
+    "customer_name": "Markus Bauer",
+    "order_date": "2024-06-15",
+    "delivery_date": "2024-06-20",
+    "replacement_date": "2024-07-02",
+    "total_amount": 549.00,
+    "discount_applied": 0.00,
+    "compensation_voucher": 50.00,
+    "loyalty_points_used": 0,
+    "loyalty_points_earned": 54,
+    "status": "Completed (Replacement Sent)",
+    "payment_method": "Credit Card",
+    "shipping_method": "Standard",
+    "warehouse": "Cologne-West",
+    "tags": ["quality-issue", "transport-damage", "return", "replacement", "escalation", "compensation"],
+    "priority": "Critical",
+    "department": "Customer Retention"
+  },
+  "cross_references": {
+    "customer": "CUST-ALT-10006",
+    "products": ["PROD-GAMING-CHAIR-PRO"],
+    "service_interactions": ["INT-2024-JUN-0567", "INT-2024-JUN-0589"],
+    "incidents": ["INC-2024-QUALITY-CHAIR-078"],
+    "reviews": ["REV-2024-0156-NEGATIVE"],
+    "related_orders": ["ORD-2024-ALT-1123"]
+  }
+}

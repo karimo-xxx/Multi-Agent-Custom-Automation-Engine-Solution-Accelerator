@@ -1,0 +1,30 @@
+{
+  "id": "ALTYCA-INT-003",
+  "type": "service_interaction",
+  "title": "WhatsApp Support - Michael Schmidt fragt zu ProStream Paket-Kompatibilität",
+  "content": "Service-Interaktion INT-2024-NOV-0089 dokumentiert eine WhatsApp Business Konversation zwischen Michael Schmidt (CUST-ALT-10002) und Support-Agent Thomas Müller am 4. November 2024, einen Tag vor Michaels großer ProStream Studio Bestellung.\n\nKontext:\nMichael Schmidt, bekannt als Gaming- und Streaming-Enthusiast, hatte Interesse am neuen ProStream Studio Paket, war sich aber unsicher bezüglich der technischen Kompatibilität verschiedener RGB-Komponenten untereinander und mit seinem bestehenden Setup.\n\nWhatsApp-Konversation (4. November 2024, 18:45 - 19:15 Uhr):\n\nMichael [18:45]: \"Hey ALTYCA! Ich überlege, das ProStream Studio Paket zu bestellen. Sind die RGB-Komponenten untereinander kompatibel? Kann ich die auch mit meinem existierenden Philips Hue System verbinden?\"\n\nThomas [18:47]: \"Hi Michael! Gute Frage! Das RGB Beleuchtungs-System Pro aus dem Paket nutzt einen eigenen Smart-Controller, der über eine App gesteuert wird. Eine direkte Integration mit Philips Hue ist nicht möglich, ABER:\n\n1. Du kannst beide Systeme parallel nutzen\n2. Unser System hat eine Sync-Funktion für Screen-Content (reagiert auf Bildschirm-Farben)\n3. Die App unterstützt Alexa & Google Home - falls dein Hue das auch macht, kannst du beide über Sprachbefehle steuern\n\nMöchtest du die beiden Systeme unbedingt integrieren oder reicht parallele Nutzung?\"\n\nMichael [18:50]: \"Parallel ist ok, Hauptsache die Farben passen. Wie sieht's mit dem UltraWide Monitor aus? Passt der an meinen aktuellen Monitor-Arm? Ist ein Amazon Basics Dual-Arm.\"\n\nThomas [18:52]: \"Der UltraWide ist 34 Zoll und wiegt 8,2kg. Amazon Basics Dual-Arms unterstützen normalerweise bis zu 32 Zoll und 9kg - sollte also technisch passen! ABER: Wegen der Breite (81cm) würde ich dir unseren Monitor Arm Dual-Screen empfehlen, der ist speziell für Ultrawide optimiert. Der ist einzeln 69 EUR, aber ich kann schauen, ob wir dir einen Bundle-Deal machen können?\"\n\nMichael [18:55]: \"Das wäre cool! Was würde der Bundle kosten?\"\n\nThomas [18:58]: \"Lass mich kurz mit meinem Manager sprechen... [2 Min Pause] ... OK, ich kann dir das ProStream Studio Paket + Monitor-Arm für 3.499 EUR anbieten statt 3.525 EUR (regulärer Preis Paket + Arm einzeln). Als Gold-Member hast du sowieso noch deinen 7,50 EUR Versandrabatt. Deal?\"\n\nMichael [19:01]: \"Nice, das klingt fair! Noch eine letzte Frage: Kann ich das per Ratenzahlung kaufen? Ist ja ein größerer Betrag.\"\n\nThomas [19:03]: \"Absolut! Wir bieten Klarna Ratenzahlung an:\n- 6 Monate: 0% Zinsen\n- 12 Monate: 5,9% Zinsen\n- 24 Monate: 8,9% Zinsen\n\nFür 3.499 EUR wären das bei 6 Monaten genau 583,17 EUR pro Monat. Die Genehmigung erfolgt sofort beim Checkout.\"\n\nMichael [19:05]: \"Perfect! Ich bestelle morgen, muss nur noch mit meiner Freundin absprechen wegen Liefertermin 😄 Ihr liefert per Spedition, oder?\"\n\nThomas [19:07]: \"Ja, der Gaming Desk kommt per Spedition wegen Sperrgut, der Rest per Standard-Paket. Beide Lieferungen innerhalb von 3-5 Werktagen. Du bekommst eine SMS zur Avisierung für den Speditionsversand. Wenn du einen Wunsch-Liefertermin hast, gib das einfach in der Bestellung an!\"\n\nMichael [19:10]: \"Alles klar, danke Thomas! Du hast mir echt weitergeholfen. Bestelle morgen 👍\"\n\nThomas [19:12]: \"Sehr gerne, Michael! Wenn du Fragen hast beim Aufbau oder sonst was, melde dich einfach. Viel Spaß mit deinem neuen Setup und viel Erfolg beim Streamen! 🎮🎙️\"\n\nMichael [19:15]: \"Danke!! 🔥\"\n\nErgebnis:\nAm nächsten Tag (5. November 2024, 16:42 Uhr) bestellte Michael das ProStream Studio Paket für 3.456 EUR (ORD-2024-ALT-1923). Er entschied sich letztlich gegen den zusätzlichen Monitor-Arm, da sein bestehender Arm doch passte. Die Bestellung wurde erfolgreich über Klarna Ratenzahlung abgewickelt.\n\nNachverfolgung:\nMichael erwähnte Thomas' kompetente Beratung in einem Twitch-Stream positiv und empfahl ALTYCA seinen Zuschauern.",
+  "metadata": {
+    "interaction_id": "INT-2024-NOV-0089",
+    "interaction_date": "2024-11-04",
+    "interaction_time": "18:45-19:15",
+    "duration_minutes": 30,
+    "channel": "WhatsApp Business",
+    "customer_id": "CUST-ALT-10002",
+    "customer_name": "Michael Schmidt",
+    "agent_name": "Thomas Müller",
+    "agent_id": "AGENT-067",
+    "interaction_type": "Pre-Sales Technical Consultation",
+    "outcome": "Sale Next Day (ORD-2024-ALT-1923)",
+    "satisfaction_rating": 5.0,
+    "tags": ["pre-sales", "technical-advice", "bundle-deal", "installment", "excellent-service"],
+    "priority": "Medium",
+    "department": "Customer Service"
+  },
+  "cross_references": {
+    "customer": "CUST-ALT-10002",
+    "orders": ["ORD-2024-ALT-1923"],
+    "products": ["PROD-PROSTREAM-STUDIO", "PROD-MONITOR-ARM-DUAL"],
+    "related_interactions": [],
+    "incidents": []
+  }
+}

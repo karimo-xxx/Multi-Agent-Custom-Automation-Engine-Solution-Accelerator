@@ -1,0 +1,29 @@
+{
+  "id": "ALTYCA-INC-001",
+  "type": "incident_report",
+  "title": "Warehouse Incident - Starkregen verursacht Lieferverzögerungen Berlin",
+  "content": "Am 18. Oktober 2024 ereignete sich ein signifikanter Zwischenfall im ALTYCA Logistikzentrum Berlin-Spandau, der zu mehrtägigen Lieferverzögerungen für Kunden im Berliner Raum führte. Der Incident INC-2024-BERLIN-LOG-005 wurde um 06:45 Uhr als kritisch eingestuft.\n\nVorfall-Beschreibung:\nInfolge des Sturmtiefs 'Xandra' kam es in den frühen Morgenstunden zu außergewöhnlich starkem Niederschlag (78mm in 6 Stunden). Das Flachdach des Lagerbereichs C im Logistikzentrum Berlin-Spandau wies aufgrund eines verstopften Regenablaufs undichte Stellen auf. Wasser drang in den Lagerbereich ein und beeinträchtigte ca. 15% der eingelagerten Ware.\n\nBetroffener Bereich:\n- Lagerbereich C (Elektronik und Textilien)\n- Circa 1.200 Artikel betroffen\n- 340 Bestellungen in Bearbeitung verzögert\n- 89 Kunden direkt betroffen, darunter Laura Hoffmann (CUST-ALT-10003)\n\nSofortmaßnahmen:\n- 06:45 Uhr: Entdeckung durch Nachtschicht-Mitarbeiter Klaus Meier\n- 07:00 Uhr: Warehouse Manager Stefan Koch alarmiert\n- 07:15 Uhr: Notfall-Team aktiviert, Bereich gesperrt\n- 08:00 Uhr: Schadensbewertung abgeschlossen\n- 09:30 Uhr: Ware umsortiert, beschädigte Artikel aussortiert\n- 10:00 Uhr: Kundenservice-Team informiert, proaktive Kontaktaufnahme\n- 11:00 Uhr: Dachdecker vor Ort, temporäre Abdichtung\n\nKundenauswirkung:\nAlle betroffenen Kunden wurden proaktiv per E-Mail und SMS informiert. Bestellungen wurden entweder vom Ausweichlager Leipzig ausgeliefert (2-3 Tage Verzögerung) oder aus frischer Ware neu kommissioniert. 89 Kunden erhielten einen 15% Rabatt-Gutschein als Entschuldigung.\n\nFinanzielle Auswirkung:\n- Warenschaden: ca. 8.400 EUR\n- Gutscheine: ca. 2.100 EUR\n- Reparaturkosten: 3.200 EUR\n- Gesamt: ca. 13.700 EUR\n\nPräventionsmaßnahmen:\nDas Facility-Management hat eine vollständige Inspektion aller Flachdächer angeordnet. Regenabläufe werden nun quartalsweise gereinigt. Zusätzlich wurde ein Frühwarnsystem für Wassereintritt installiert.",
+  "metadata": {
+    "incident_id": "INC-2024-BERLIN-LOG-005",
+    "incident_date": "2024-10-18",
+    "incident_type": "Weather/Infrastructure",
+    "severity": "Critical",
+    "location": "Berlin-Spandau Logistics Center",
+    "affected_customers": 89,
+    "affected_orders": 340,
+    "financial_impact": 13700.00,
+    "resolved_date": "2024-10-22",
+    "status": "Resolved",
+    "tags": ["weather", "warehouse", "water-damage", "delay", "logistics", "infrastructure"],
+    "priority": "Critical",
+    "department": "Operations",
+    "responsible": "Stefan Koch (Warehouse Manager)"
+  },
+  "cross_references": {
+    "affected_customers": ["CUST-ALT-10003", "CUST-ALT-10023", "CUST-ALT-10034"],
+    "affected_orders": ["ORD-2024-ALT-1678", "ORD-2024-ALT-1689", "ORD-2024-ALT-1701"],
+    "service_interactions": ["INT-2024-OCT-0789"],
+    "related_incidents": [],
+    "follow_up_tasks": ["TASK-2024-ROOF-INSPECTION", "TASK-2024-DRAIN-MAINTENANCE"]
+  }
+}

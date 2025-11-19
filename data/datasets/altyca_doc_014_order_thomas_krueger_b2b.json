@@ -1,0 +1,36 @@
+{
+  "id": "ALTYCA-ORD-004",
+  "type": "order_fulfillment",
+  "title": "Bestellung ORD-2024-ALT-2045 - Thomas Krüger B2B Büroausstattung Großbestellung",
+  "content": "Bestellung ORD-2024-ALT-2045 wurde am 28. Oktober 2024 von Thomas Krüger (CUST-ALT-10004) für seine Marketingagentur aufgegeben und stellt eine der größten Einzelbestellungen des Quartals dar. Der B2B-Gesamtwert beträgt 8.900,00 EUR netto (10.591,00 EUR brutto).\n\nBestellte Produkte für 12 Mitarbeiter-Arbeitsplätze:\n1. ErgoMax Business Bürostuhl (PROD-ERGOMAX-BUSINESS) x12 - 4.788,00 EUR\n   - Farbe: Anthrazit, höhenverstellbar, Lordosenstütze, Armlehnen 3D\n   - Preis pro Stuhl: 399,00 EUR (Mengenrabatt 15% von 469,00 EUR)\n2. Standing Desk Pro 160x80cm (PROD-STANDING-DESK-PRO) x6 - 2.394,00 EUR\n   - Elektrisch höhenverstellbar, Memory-Funktion, weiße Platte\n   - Preis pro Tisch: 399,00 EUR (Mengenrabatt 20% von 499,00 EUR)\n3. Monitor Arm Dual-Screen (PROD-MONITOR-ARM-DUAL) x12 - 828,00 EUR\n   - Bis 32 Zoll, vollständig beweglich, Kabelmanagement integriert\n   - Preis pro Arm: 69,00 EUR (Mengenrabatt 10%)\n4. Cable Management Business Bundle (PROD-CABLE-BUNDLE-BIZ) x12 - 348,00 EUR\n5. Schreibtischmatten Premium XL (PROD-DESK-MAT-XL) x12 - 228,00 EUR\n6. LED Desk Lamps Professional (PROD-LED-LAMP-PRO) x12 - 314,00 EUR\n\nGesamtrabatt: 1.456,00 EUR (B2B Mengenrabatt)\nVersand: Kostenlose Speditionslieferung (B2B-Vorteil)\nLieferadresse: Krüger Marketing GmbH, Zeil 89, 60313 Frankfurt am Main\nZahlungsmethode: Rechnungskauf (Zahlungsziel 30 Tage)\n\nBestellstatus-Timeline:\n- 28.10.2024 10:30 - Bestellung via Account Manager Julia Becker eingegangen\n- 28.10.2024 14:15 - Kreditprüfung erfolgreich (Zahlungsziel genehmigt)\n- 29.10.2024 08:00 - Kommissionierung gestartet, Lager Frankfurt-Süd\n- 30.10.2024 13:00 - Komplettlieferung kommissioniert\n- 31.10.2024 07:30 - Speditionsversand (eigener LKW für Großbestellung)\n- 31.10.2024 14:20 - Anlieferung beim Kunden, Entladung mit Hubwagen\n- 31.10.2024 16:00 - Alle Artikel geprüft und akzeptiert, Unterschrift Thomas Krüger\n\nBesonderheiten: Dies war die zweite Großbestellung für den neuen Agentur-Standort. Account Manager Julia Becker koordinierte einen Vor-Ort-Termin zur Lieferplanung. Die Stühle wurden bereits vormontiert geliefert, um Aufbauzeit zu sparen. Thomas nutzte seine gesammelten 2.000 B2B-Bonuspunkte für einen zusätzlichen 100 EUR Rabatt.\n\nNachverfolgung: Rechnung wurde fristgerecht am 25.11.2024 bezahlt. Thomas gab positives Feedback zur reibungslosen Abwicklung und kündigte weitere Bestellungen für Q1 2025 an.",
+  "metadata": {
+    "order_id": "ORD-2024-ALT-2045",
+    "customer_id": "CUST-ALT-10004",
+    "customer_name": "Thomas Krüger",
+    "company": "Krüger Marketing GmbH",
+    "order_date": "2024-10-28",
+    "delivery_date": "2024-10-31",
+    "total_amount_net": 8900.00,
+    "total_amount_gross": 10591.00,
+    "discount_applied": 1556.00,
+    "loyalty_points_used": 2000,
+    "loyalty_points_earned": 890,
+    "status": "Completed & Paid",
+    "payment_method": "Invoice (30 days)",
+    "payment_date": "2024-11-25",
+    "shipping_method": "Freight (Own Truck)",
+    "warehouse": "Frankfurt-South",
+    "tags": ["b2b", "bulk-order", "corporate", "freight", "high-value", "invoice-payment"],
+    "priority": "Critical",
+    "department": "B2B Sales",
+    "account_manager": "Julia Becker"
+  },
+  "cross_references": {
+    "customer": "CUST-ALT-10004",
+    "products": ["PROD-ERGOMAX-BUSINESS", "PROD-STANDING-DESK-PRO", "PROD-MONITOR-ARM-DUAL", "PROD-CABLE-BUNDLE-BIZ", "PROD-DESK-MAT-XL", "PROD-LED-LAMP-PRO"],
+    "service_interactions": ["INT-2024-NOV-0567"],
+    "incidents": [],
+    "reviews": [],
+    "related_orders": ["ORD-2024-ALT-1890", "ORD-2023-ALT-1234"]
+  }
+}

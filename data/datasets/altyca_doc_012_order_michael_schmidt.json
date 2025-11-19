@@ -1,0 +1,33 @@
+{
+  "id": "ALTYCA-ORD-002",
+  "type": "order_fulfillment",
+  "title": "Bestellung ORD-2024-ALT-1923 - Michael Schmidt ProStream Studio Paket",
+  "content": "Bestellung ORD-2024-ALT-1923 wurde am 5. November 2024 von Michael Schmidt (CUST-ALT-10002) aufgegeben und repräsentiert ein komplettes Gaming- und Streaming-Setup. Der Gesamtwert beträgt 3.456,00 EUR und wurde über Ratenzahlung (6 Monate, 0% Zinsen) finanziert.\n\nBestellte Produkte - ProStream Studio Paket:\n1. UltraWide Gaming Monitor 34 Zoll (PROD-ULTRAWIDE-MONITOR) - 899,00 EUR\n   - Auflösung: 3440x1440, 144Hz, 1ms Reaktionszeit, HDR400\n2. RGB Beleuchtungs-System Pro (PROD-RGB-LIGHTING-PRO) - 234,00 EUR\n   - Inklusive: 2x LED-Panels, RGB-Strip 3m, Smart-Controller\n3. StreamMaster Mikrofonarm mit XLR-Mikrofon (PROD-STREAMMASTER-MIC) - 389,00 EUR\n4. Gaming Desk XL mit RGB (PROD-GAMING-DESK-XL) - 1.299,00 EUR\n   - Größe: 160x80cm, integrierte RGB-Beleuchtung, Kabelmanagement\n5. Ergonomischer Gaming-Stuhl ProGamer (PROD-PROGAMER-CHAIR) - 549,00 EUR\n6. Webcam 4K ProStream (PROD-WEBCAM-4K) - 86,00 EUR\n\nVersand: Standard-Versand (14,99 EUR) - Gold-Member Rabatt: 7,50 EUR\nLieferadresse: Sternstraße 15, 20357 Hamburg\nZahlungsmethode: Ratenzahlung (6x 576,00 EUR, via Klarna)\n\nBestellstatus-Timeline:\n- 05.11.2024 16:42 - Bestellung eingegangen\n- 05.11.2024 17:20 - Ratenzahlungsantrag genehmigt (Klarna)\n- 06.11.2024 09:00 - Kommissionierung gestartet, Lager Hamburg-Ost\n- 07.11.2024 10:30 - Teilversand: Monitor, Mikrofon, Webcam (DHL Standard)\n- 08.11.2024 14:45 - Speditionsversand: Gaming Desk + Stuhl (Sperrgut)\n- 09.11.2024 13:20 - Alle Pakete erfolgreich zugestellt\n- 10.11.2024 08:15 - Zweites Paket zugestellt, Unterschrift Michael Schmidt\n\nBesonderheiten: Michael hatte vorab per WhatsApp (INT-2024-NOV-0089) Fragen zur Kompatibilität der RGB-Komponenten gestellt. Support-Agent Thomas Müller konnte alle technischen Details klären. Die großen Möbelstücke wurden per Spedition mit Avisierung geliefert. Michael postete sein fertiges Setup auf Twitch und erwähnte ALTYCA positiv.\n\nNachverfolgung: Erste Ratenzahlung erfolgte pünktlich am 15.11.2024.",
+  "metadata": {
+    "order_id": "ORD-2024-ALT-1923",
+    "customer_id": "CUST-ALT-10002",
+    "customer_name": "Michael Schmidt",
+    "order_date": "2024-11-05",
+    "delivery_date": "2024-11-10",
+    "total_amount": 3456.00,
+    "discount_applied": 7.50,
+    "loyalty_points_used": 0,
+    "loyalty_points_earned": 345,
+    "status": "Delivered",
+    "payment_method": "Installment (Klarna)",
+    "installment_plan": "6 months, 0%",
+    "shipping_method": "Standard + Freight",
+    "warehouse": "Hamburg-East",
+    "tags": ["gaming", "streaming", "bundle", "installment", "freight-delivery", "high-value"],
+    "priority": "High",
+    "department": "Order Fulfillment"
+  },
+  "cross_references": {
+    "customer": "CUST-ALT-10002",
+    "products": ["PROD-ULTRAWIDE-MONITOR", "PROD-RGB-LIGHTING-PRO", "PROD-STREAMMASTER-MIC", "PROD-GAMING-DESK-XL", "PROD-PROGAMER-CHAIR", "PROD-WEBCAM-4K"],
+    "service_interactions": ["INT-2024-NOV-0089"],
+    "incidents": [],
+    "reviews": ["REV-2024-0223"],
+    "related_orders": ["ORD-2024-ALT-1456"]
+  }
+}

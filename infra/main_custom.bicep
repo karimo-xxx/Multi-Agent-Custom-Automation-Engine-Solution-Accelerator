@@ -107,6 +107,27 @@ param gpt4_1ModelCapacity int = 150
 @description('Optional. AI model deployment token capacity. Defaults to 50 for optimal performance.')
 param gptReasoningModelCapacity int = 50
 
+@minLength(1)
+@description('Optional. Name of the embedding model to deploy for vector search.')
+param embeddingModelName string = 'text-embedding-3-large'
+
+@description('Optional. Version of the embedding model to deploy. Defaults to 1.')
+param embeddingModelVersion string = '1'
+
+@minLength(1)
+@allowed([
+  'Standard'
+  'GlobalStandard'
+])
+@description('Optional. Embedding model deployment type. Defaults to Standard.')
+param embeddingModelDeploymentType string = 'Standard'
+
+@description('Optional. Embedding model deployment token capacity. Defaults to 100 for optimal performance.')
+param embeddingModelCapacity int = 100
+
+@description('Optional. Dimensions of the embedding model. text-embedding-3-large has 3072 dimensions.')
+param embeddingModelDimensions int = 3072
+
 @description('Optional. The tags to apply to all deployed Azure resources.')
 param tags resourceInput<'Microsoft.Resources/resourceGroups@2025-04-01'>.tags = {}
 
@@ -1109,6 +1130,16 @@ var aiFoundryAiServicesReasoningModelDeployment = {
   }
   raiPolicyName: 'Microsoft.Default'
 }
+var aiFoundryAiServicesEmbeddingModelDeployment = {
+  format: 'OpenAI'
+  name: embeddingModelName
+  version: embeddingModelVersion
+  sku: {
+    name: embeddingModelDeploymentType
+    capacity: embeddingModelCapacity
+  }
+  raiPolicyName: 'Microsoft.Default'
+}
 var aiFoundryAiProjectDescription = 'AI Foundry Project'
 
 resource existingAiFoundryAiServices 'Microsoft.CognitiveServices/accounts@2025-06-01' existing = if (useExistingAiFoundryAiProject) {
@@ -1159,6 +1190,19 @@ module existingAiFoundryAiServicesDeployments 'modules/ai-services-deployments.b
         sku: {
           name: aiFoundryAiServicesReasoningModelDeployment.sku.name
           capacity: aiFoundryAiServicesReasoningModelDeployment.sku.capacity
+        }
+      }
+      {
+        name: aiFoundryAiServicesEmbeddingModelDeployment.name
+        model: {
+          format: aiFoundryAiServicesEmbeddingModelDeployment.format
+          name: aiFoundryAiServicesEmbeddingModelDeployment.name
+          version: aiFoundryAiServicesEmbeddingModelDeployment.version
+        }
+        raiPolicyName: aiFoundryAiServicesEmbeddingModelDeployment.raiPolicyName
+        sku: {
+          name: aiFoundryAiServicesEmbeddingModelDeployment.sku.name
+          capacity: aiFoundryAiServicesEmbeddingModelDeployment.sku.capacity
         }
       }
     ]
@@ -1234,6 +1278,19 @@ module aiFoundryAiServices 'br:mcr.microsoft.com/bicep/avm/res/cognitive-service
         sku: {
           name: aiFoundryAiServicesReasoningModelDeployment.sku.name
           capacity: aiFoundryAiServicesReasoningModelDeployment.sku.capacity
+        }
+      }
+      {
+        name: aiFoundryAiServicesEmbeddingModelDeployment.name
+        model: {
+          format: aiFoundryAiServicesEmbeddingModelDeployment.format
+          name: aiFoundryAiServicesEmbeddingModelDeployment.name
+          version: aiFoundryAiServicesEmbeddingModelDeployment.version
+        }
+        raiPolicyName: aiFoundryAiServicesEmbeddingModelDeployment.raiPolicyName
+        sku: {
+          name: aiFoundryAiServicesEmbeddingModelDeployment.sku.name
+          capacity: aiFoundryAiServicesEmbeddingModelDeployment.sku.capacity
         }
       }
     ]
@@ -1648,6 +1705,18 @@ module containerApp 'br/public:avm/res/app/container-app:0.18.1' = {
             value: aiFoundryAiServicesReasoningModelDeployment.name
           }
           {
+            name: 'AZURE_OPENAI_EMBEDDING_DEPLOYMENT'
+            value: aiFoundryAiServicesEmbeddingModelDeployment.name
+          }
+          {
+            name: 'AZURE_OPENAI_EMBEDDING_MODEL'
+            value: embeddingModelName
+          }
+          {
+            name: 'AZURE_OPENAI_EMBEDDING_DIMENSIONS'
+            value: string(embeddingModelDimensions)
+          }
+          {
             name: 'MCP_SERVER_ENDPOINT'
             value: 'https://${containerAppMcp.outputs.fqdn}/mcp'
           }
@@ -1949,7 +2018,7 @@ module avmStorageAccount 'br/public:avm/res/storage/storage-account:0.20.0' = {
 // ========== Search Service ========== //
 
 var searchServiceName = 'srch-${solutionSuffix}'
-var aiSearchIndexName = 'sample-dataset-index'
+var aiSearchIndexName = 'macae-hybrid-index'
 module searchService 'br/public:avm/res/search/search-service:0.11.1' = {
   name: take('avm.res.search.search-service.${solutionSuffix}', 64)
   params: {
@@ -2137,6 +2206,9 @@ output AZURE_OPENAI_ENDPOINT string = 'https://${aiFoundryAiServicesResourceName
 output AZURE_OPENAI_MODEL_NAME string = aiFoundryAiServicesModelDeployment.name
 output AZURE_OPENAI_DEPLOYMENT_NAME string = aiFoundryAiServicesModelDeployment.name
 output AZURE_OPENAI_API_VERSION string = azureopenaiVersion
+output AZURE_OPENAI_EMBEDDING_DEPLOYMENT string = aiFoundryAiServicesEmbeddingModelDeployment.name
+output AZURE_OPENAI_EMBEDDING_MODEL string = embeddingModelName
+output AZURE_OPENAI_EMBEDDING_DIMENSIONS int = embeddingModelDimensions
 // output APPLICATIONINSIGHTS_INSTRUMENTATION_KEY string = applicationInsights.outputs.instrumentationKey
 // output AZURE_AI_PROJECT_ENDPOINT string = aiFoundryAiServices.outputs.aiProjectInfo.apiEndpoint
 output AZURE_AI_SUBSCRIPTION_ID string = subscription().subscriptionId
