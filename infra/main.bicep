@@ -141,7 +141,7 @@ param backendContainerImageTag string = 'latest_v3'
 param frontendContainerImageName string = 'macaefrontend'
 
 @description('Optional. The Container Image Tag to deploy on the frontend.')
-param frontendContainerImageTag string = 'latest_v3'
+param frontendContainerImageTag string = 'latest_v4'
 
 @description('Optional. The Container Image Name to deploy on the MCP.')
 param MCPContainerImageName string = 'macaemcp'

@@ -13,9 +13,8 @@ const AppWrapper = () => {
   // State to store the current theme
   const [isConfigLoaded, setIsConfigLoaded] = useState(false);
   const [isUserInfoLoaded, setIsUserInfoLoaded] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  );
+  // Set default theme to light mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
   type ConfigType = typeof defaultConfig;
   const [config, setConfig] = useState<ConfigType>(defaultConfig);
   useEffect(() => {
@@ -49,21 +48,8 @@ const AppWrapper = () => {
     
     initConfig(); // Call the async function inside useEffect
   }, []);
-  // Effect to listen for changes in the user's preferred color scheme
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-    const handleThemeChange = (event: MediaQueryListEvent) => {
-      setIsDarkMode(event.matches);
-      document.body.classList.toggle("dark-mode", event.matches); // ✅ Add this
-    };
-
-    // Apply dark-mode class initially
-    document.body.classList.toggle("dark-mode", isDarkMode);
-
-    mediaQuery.addEventListener("change", handleThemeChange);
-    return () => mediaQuery.removeEventListener("change", handleThemeChange);
-  }, []);
+  // Note: Theme is now fixed to light mode (isDarkMode = false)
+  // Automatic dark mode detection is disabled
   if (!isConfigLoaded || !isUserInfoLoaded) return <div>Loading...</div>;
   return (
     <StrictMode>
