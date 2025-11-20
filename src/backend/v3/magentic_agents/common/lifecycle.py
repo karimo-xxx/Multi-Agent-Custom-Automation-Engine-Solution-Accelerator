@@ -19,6 +19,7 @@ class MCPEnabledBase:
         self._stack: AsyncExitStack | None = None
         self.mcp_cfg: MCPConfig | None = mcp
         self.mcp_plugin: MCPStreamableHttpPlugin | None = None
+        self._mcp_plugin_instance: MCPStreamableHttpPlugin | None = None  # Keep reference to prevent premature cleanup
         self._agent: Any | None = None  # delegate target
 
     async def open(self) -> "MCPEnabledBase":
@@ -33,11 +34,18 @@ class MCPEnabledBase:
         if self._stack is None:
             return
         try:
+            # Close MCP plugin manually if it exists
+            if self._mcp_plugin_instance is not None:
+                try:
+                    await self._mcp_plugin_instance.__aexit__(None, None, None)
+                except Exception:
+                    pass
             # self.cred.close()
             await self._stack.aclose()
         finally:
             self._stack = None
             self.mcp_plugin = None
+            self._mcp_plugin_instance = None
             self._agent = None
 
     # Context manager
@@ -75,17 +83,22 @@ class MCPEnabledBase:
     async def _enter_mcp_if_configured(self) -> None:
         if not self.mcp_cfg:
             return
+        # Build headers with required Accept types for FastMCP streamable-http
+        headers = {
+            "Accept": "application/json, text/event-stream",
+            "Content-Type": "application/json",
+        }
         # headers = self._build_mcp_headers()
         plugin = MCPStreamableHttpPlugin(
             name=self.mcp_cfg.name,
             description=self.mcp_cfg.description,
             url=self.mcp_cfg.url,
-            # headers=headers,
+            headers=headers,
         )
-        # Enter MCP async context via the stack to ensure correct LIFO cleanup
-        if self._stack is None:
-            self._stack = AsyncExitStack()
-        self.mcp_plugin = await self._stack.enter_async_context(plugin)
+        # Store plugin instance to prevent premature cleanup
+        self._mcp_plugin_instance = plugin
+        # Open MCP plugin manually to keep session alive during tool calls
+        self.mcp_plugin = await plugin.__aenter__()
 
 
 class AzureAgentBase(MCPEnabledBase):

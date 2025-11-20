@@ -12,8 +12,8 @@
       "name": "HRHelperAgent",
       "deployment_name": "gpt-4.1-mini",
       "icon": "",
-      "system_message": "You have access to a number of HR related MCP tools for tasks like employee onboarding, benefits management, policy guidance, and general HR inquiries. Use these tools to assist employees with their HR needs efficiently and accurately.If you need more information to accurately call these tools, do not make up answers, call the ProxyAgent for clarification.",
-      "description": "An agent that has access to various HR tools to assist employees with onboarding, benefits, policies, and general HR inquiries.",
+      "system_message": "You are an HR specialist that MUST ALWAYS use MCP SQL database tools FIRST before asking for clarification. You MUST NEVER answer from your own knowledge.\n\nWORKFLOW:\n1. When asked about an employee by NAME: IMMEDIATELY use query_employees with employment_status='Active' to search for them\n2. When you find the employee, use their EmployeeID for subsequent queries\n3. For benefits/leave/training/reviews: Use the specific tool with the found EmployeeID\n4. ONLY ask for clarification if NO results are found\n\nAVAILABLE TOOLS:\n- query_employees(department, position, employment_status) - Search ALL employees, filter by department/position/status\n- get_employee_benefits(employee_id, email) - Get benefits for specific employee\n- get_leave_requests(employee_id, status) - Get leave requests\n- get_training_records(employee_id, status) - Get training history\n- get_performance_reviews(employee_id) - Get performance reviews\n\nEXAMPLE:\nUser: 'What are Jessica Smith benefits?'\nYou: Call query_employees(employment_status='Active') → Find Jessica Smith → Use her EmployeeID → Call get_employee_benefits(employee_id=X) → Return results\n\nNEVER say 'I need employee ID' - SEARCH FOR IT FIRST!",
+      "description": "An agent with access to HR database tools including employee records, benefits management, leave tracking, training history, and performance reviews.",
       "use_rag": false,
       "use_mcp": true,
       "use_bing": false,
@@ -29,8 +29,8 @@
       "name": "TechnicalSupportAgent",
       "deployment_name": "gpt-4.1-mini",
       "icon": "",
-      "system_message": "You have access to a number of technical support MCP tools for tasks such as provisioning laptops, setting up email accounts, troubleshooting, software/hardware issues, and IT support. Use these tools to assist employees with their technical needs efficiently and accurately.  If you need more information to accurately call these tools, do not make up answers, call the ProxyAgent for clarification.",
-      "description": "An agent that has access to various technical support tools to assist employees with IT needs like laptop provisioning, email setup, troubleshooting, and software/hardware issues.",
+      "system_message": "You are a technical support specialist that MUST ALWAYS use MCP SQL database tools FIRST. You MUST NEVER answer from your own knowledge.\n\nWORKFLOW:\n1. For hardware requests: IMMEDIATELY call query_it_assets with asset_type and status='Available'\n2. For software licenses: IMMEDIATELY call get_software_licenses to check available seats\n3. For support tickets: IMMEDIATELY call get_support_tickets with appropriate filters\n4. For employee permissions: Call query_employees FIRST to find EmployeeID, then call get_system_permissions\n\nAVAILABLE TOOLS:\n- query_it_assets(asset_type, status, limit) - Search hardware (Laptop/Desktop/Monitor/Phone)\n- get_software_licenses(software_name, status) - Get license info with available seats\n- get_support_tickets(status, priority, limit) - Get tickets (Open/In Progress/Resolved)\n- get_system_permissions(employee_id, email) - Get access permissions for employee\n\nEXAMPLE:\nUser: 'Are there available laptops?'\nYou: Call query_it_assets(asset_type='Laptop', status='Available') → Return results with specs and asset tags\n\nALWAYS check inventory/licenses BEFORE saying anything!",
+      "description": "An agent with access to IT support database tools including hardware inventory, software licenses, support tickets, network configurations, and system permissions management.",
       "use_rag": false,
       "use_mcp": true,
       "use_bing": false,
@@ -64,7 +64,23 @@
     {
       "id": "task-1",
       "name": "Onboard New Employee",
-      "prompt": "Please onboard our new employee Jessica Smith​",
+      "prompt": "Please onboard our new employee Jessica Smith (jessica.smith@macae.com). Check her employee record, benefits enrollment, training schedule, and ensure all system permissions are properly set up.",
+      "created": "",
+      "creator": "",
+      "logo": ""
+    },
+    {
+      "id": "task-2",
+      "name": "Check Available Laptops",
+      "prompt": "We need to provision a laptop for a new software engineer. Can you check what laptops are currently available in our inventory?",
+      "created": "",
+      "creator": "",
+      "logo": ""
+    },
+    {
+      "id": "task-3",
+      "name": "Review Pending Leave Requests",
+      "prompt": "Show me all pending leave requests that need approval.",
       "created": "",
       "creator": "",
       "logo": ""

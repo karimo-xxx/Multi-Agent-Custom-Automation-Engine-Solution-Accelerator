@@ -1372,6 +1372,24 @@ module containerApp 'br/public:avm/res/app/container-app:0.18.1' = {
   }
 }
 
+// ========== Azure SQL Database ========== //
+// SQL Database for HR and IT Support data
+var sqlServerResourceName = 'sql-${solutionSuffix}'
+var sqlDatabaseName = 'macae-hr-db'
+module sqlDatabase 'modules/sql.bicep' = {
+  name: 'sql-database-deployment'
+  params: {
+    sqlServerName: sqlServerResourceName
+    sqlDatabaseName: sqlDatabaseName
+    location: location
+    tags: tags
+    azureAdAdminObjectId: userAssignedIdentity.outputs.principalId
+    azureAdAdminPrincipalName: userAssignedIdentity.outputs.clientId
+    databaseSku: 'Basic'
+    enablePublicNetworkAccess: true
+  }
+}
+
 // ========== MCP Container App Service ========== //
 // WAF best practices for container apps: https://learn.microsoft.com/en-us/azure/well-architected/service-guides/azure-container-apps
 // PSRule for Container App: https://azure.github.io/PSRule.Rules.Azure/en/rules/resource/#container-app
@@ -1461,6 +1479,14 @@ module containerAppMcp 'br/public:avm/res/app/container-app:0.18.1' = {
           {
             name: 'DATASET_PATH'
             value: './datasets'
+          }
+          {
+            name: 'SQL_CONNECTION_STRING'
+            value: sqlDatabase.outputs.connectionString
+          }
+          {
+            name: 'SQL_USE_MANAGED_IDENTITY'
+            value: 'true'
           }
         ]
       }
