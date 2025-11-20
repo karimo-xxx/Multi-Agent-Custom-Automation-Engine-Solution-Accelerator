@@ -89,8 +89,8 @@
 
 .home-input-quick-tasks {
   display: grid !important;
-  grid-template-columns: 1fr 1fr 1fr 1fr !important;
-  gap: 8px;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px;
 }
 
 

@@ -76,14 +76,6 @@
       "created": "",
       "creator": "",
       "logo": ""
-    },
-    {
-      "id": "task-3",
-      "name": "Review Pending Leave Requests",
-      "prompt": "Show me all pending leave requests that need approval.",
-      "created": "",
-      "creator": "",
-      "logo": ""
     }
   ]
 }

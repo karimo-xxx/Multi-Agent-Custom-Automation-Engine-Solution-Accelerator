@@ -84,6 +84,14 @@
       "created": "",
       "creator": "",
       "logo": ""
+    },
+    {
+      "id": "task-2",
+      "name": "Order Status Analysis",
+      "prompt": "Check the order status and fulfillment details for customer Michael Schmidt. Provide a comprehensive overview including order history, current delivery status, and any outstanding issues.",
+      "created": "",
+      "creator": "",
+      "logo": ""
     }
   ]
 }
