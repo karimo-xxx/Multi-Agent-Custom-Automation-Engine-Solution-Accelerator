@@ -1,0 +1,97 @@
+{
+  "id": "1",
+  "team_id": "team-1",
+  "name": "Competitive Intelligence Team",
+  "status": "visible",
+  "created": "",
+  "created_by": "",
+  "agents": [
+    {
+      "input_key": "",
+      "type": "",
+      "name": "MarketResearchAgent",
+      "deployment_name": "gpt-4.1-mini",
+      "icon": "",
+      "system_message": "You are a Market Research Agent specializing in competitive intelligence. You have access to real-time web search via Bing to gather information about competitors, market trends, industry developments, and product comparisons. When researching, focus on: competitor products and pricing, market positioning, technology trends, customer reviews and feedback, and industry reports. Always cite your sources with URLs and publication dates. Provide factual, objective analysis based on publicly available information.",
+      "description": "Specializes in researching competitors, market trends, and industry developments using real-time web search. Provides data-driven insights about competitive landscape and market positioning.",
+      "use_rag": false,
+      "use_mcp": false,
+      "use_bing": true,
+      "use_reasoning": false,
+      "index_name": "",
+      "index_foundry_name": "",
+      "index_endpoint": "",
+      "coding_tools": false
+    },
+    {
+      "input_key": "",
+      "type": "",
+      "name": "NewsIntelligenceAgent",
+      "deployment_name": "gpt-4.1-mini",
+      "icon": "",
+      "system_message": "You are a News & Intelligence Agent monitoring the competitive landscape. You have access to real-time web search via Bing to track: breaking news about competitors, product launches and announcements, executive moves and company changes, partnerships and acquisitions, social media sentiment and public perception, and press releases and media coverage. Focus on recent developments (last 30 days preferred). Always include timestamps and source credibility assessment. Flag emerging trends and potential threats/opportunities.",
+      "description": "Monitors real-time news, announcements, and social sentiment about competitors and the industry. Identifies emerging trends and potential market shifts.",
+      "use_rag": false,
+      "use_mcp": false,
+      "use_bing": true,
+      "use_reasoning": false,
+      "index_name": "",
+      "index_foundry_name": "",
+      "coding_tools": false
+    },
+    {
+      "input_key": "",
+      "type": "",
+      "name": "StrategicAnalysisAgent",
+      "deployment_name": "o4-mini",
+      "icon": "",
+      "system_message": "You are a Strategic Analysis Agent with advanced reasoning capabilities. Your role is to synthesize information from the Market Research Agent and News Intelligence Agent to provide strategic insights. Analyze patterns, identify opportunities and threats, assess competitive positioning, and provide actionable recommendations. Use chain-of-thought reasoning to: 1) Summarize key findings from both agents, 2) Identify strategic implications, 3) Assess potential risks and opportunities, 4) Provide prioritized recommendations with rationale. Be concise but thorough. Focus on business impact and strategic value.",
+      "description": "Synthesizes intelligence from market research and news monitoring to provide strategic analysis and actionable recommendations using advanced reasoning.",
+      "use_rag": false,
+      "use_mcp": false,
+      "use_bing": false,
+      "use_reasoning": true,
+      "index_name": "",
+      "index_foundry_name": "",
+      "coding_tools": false
+    },
+    {
+      "input_key": "",
+      "type": "",
+      "name": "ProxyAgent",
+      "deployment_name": "",
+      "icon": "",
+      "system_message": "",
+      "description": "",
+      "use_rag": false,
+      "use_mcp": false,
+      "use_bing": false,
+      "use_reasoning": false,
+      "index_name": "",
+      "index_foundry_name": "",
+      "coding_tools": false
+    }
+  ],
+  "protected": false,
+  "description": "Competitive intelligence team specializing in real-time market research, competitor monitoring, and strategic analysis using Bing search capabilities.",
+  "logo": "",
+  "plan": "",
+  "starting_tasks": [
+    {
+      "id": "task-1",
+      "name": "Competitor Analysis",
+      "prompt": "Analyze recent developments and market positioning of Microsoft Azure AI. Include product updates, pricing changes, and strategic moves.",
+      "created": "",
+      "creator": "",
+      "logo": ""
+    },
+    {
+      "id": "task-2",
+      "name": "Market Intelligence Brief",
+      "prompt": "Provide a competitive intelligence brief on AI Agent platforms: current landscape, key competitors, latest news, and strategic recommendations.",
+      "created": "",
+      "creator": "",
+      "logo": ""
+    }
+  ]
+}

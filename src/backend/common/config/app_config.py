@@ -54,9 +54,9 @@ class AppConfig:
         )
         self.AZURE_OPENAI_ENDPOINT = self._get_required("AZURE_OPENAI_ENDPOINT")
         self.REASONING_MODEL_NAME = self._get_optional("REASONING_MODEL_NAME", "o3")
-        # self.AZURE_BING_CONNECTION_NAME = self._get_optional(
-        #     "AZURE_BING_CONNECTION_NAME"
-        # )
+        self.AZURE_BING_CONNECTION_NAME = self._get_optional(
+            "AZURE_BING_CONNECTION_NAME"
+        )
         self.SUPPORTED_MODELS = self._get_optional("SUPPORTED_MODELS")
         # Frontend settings
         self.FRONTEND_SITE_NAME = self._get_optional(
@@ -104,7 +104,7 @@ class AppConfig:
             "AZURE_OPENAI_EMBEDDING_DIMENSIONS", "3072"
         )
         
-        # self.BING_CONNECTION_NAME = self._get_optional("BING_CONNECTION_NAME")
+        self.BING_CONNECTION_NAME = self._get_optional("BING_CONNECTION_NAME")
 
         test_team_json = self._get_optional("TEST_TEAM_JSON")
 
