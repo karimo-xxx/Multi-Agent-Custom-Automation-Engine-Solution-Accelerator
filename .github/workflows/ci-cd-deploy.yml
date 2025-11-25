@@ -1,0 +1,276 @@
+name: CI/CD - Build and Deploy Services
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/backend/**'
+      - 'src/frontend/**'
+      - 'src/mcp_server/**'
+      - '.github/workflows/ci-cd-deploy.yml'
+  workflow_dispatch:
+    inputs:
+      deploy_backend:
+        description: 'Deploy Backend'
+        type: boolean
+        default: true
+      deploy_frontend:
+        description: 'Deploy Frontend'
+        type: boolean
+        default: true
+      deploy_mcp:
+        description: 'Deploy MCP Server'
+        type: boolean
+        default: true
+
+env:
+  AZURE_RESOURCE_GROUP: rg-karim
+  ACR_NAME: crdevpikfl
+  ACR_LOGIN_SERVER: crdevpikfl.azurecr.io
+  BACKEND_CONTAINER_APP: ca-devpikfl
+  FRONTEND_WEB_APP: app-devpikfl
+  MCP_CONTAINER_APP: ca-mcp-devpikfl
+
+jobs:
+  # Detect which services changed
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      backend: ${{ steps.changes.outputs.backend }}
+      frontend: ${{ steps.changes.outputs.frontend }}
+      mcp: ${{ steps.changes.outputs.mcp }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      
+      - name: Detect changed files
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "backend=${{ inputs.deploy_backend }}" >> $GITHUB_OUTPUT
+            echo "frontend=${{ inputs.deploy_frontend }}" >> $GITHUB_OUTPUT
+            echo "mcp=${{ inputs.deploy_mcp }}" >> $GITHUB_OUTPUT
+          else
+            git diff --name-only HEAD^ HEAD > changed_files.txt
+            cat changed_files.txt
+            
+            if grep -q "^src/backend/" changed_files.txt; then
+              echo "backend=true" >> $GITHUB_OUTPUT
+            else
+              echo "backend=false" >> $GITHUB_OUTPUT
+            fi
+            
+            if grep -q "^src/frontend/" changed_files.txt; then
+              echo "frontend=true" >> $GITHUB_OUTPUT
+            else
+              echo "frontend=false" >> $GITHUB_OUTPUT
+            fi
+            
+            if grep -q "^src/mcp_server/" changed_files.txt; then
+              echo "mcp=true" >> $GITHUB_OUTPUT
+            else
+              echo "mcp=false" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+  # Build and Deploy Backend
+  build-deploy-backend:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.backend == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Build and Push Backend Image
+        run: |
+          IMAGE_TAG=v${{ github.run_number }}
+          echo "Building backend:$IMAGE_TAG..."
+          
+          az acr build \
+            --registry ${{ env.ACR_NAME }} \
+            --image backend:$IMAGE_TAG \
+            --image backend:latest \
+            --file src/backend/Dockerfile \
+            --platform linux/amd64 \
+            src/backend
+          
+          echo "BACKEND_IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
+
+      - name: Deploy Backend to Container App
+        run: |
+          echo "Deploying backend:${{ env.BACKEND_IMAGE_TAG }} to ${{ env.BACKEND_CONTAINER_APP }}..."
+          
+          az containerapp update \
+            --name ${{ env.BACKEND_CONTAINER_APP }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --image ${{ env.ACR_LOGIN_SERVER }}/backend:${{ env.BACKEND_IMAGE_TAG }}
+          
+          echo "✅ Backend deployed successfully!"
+
+      - name: Get Backend URL
+        run: |
+          BACKEND_FQDN=$(az containerapp show \
+            --name ${{ env.BACKEND_CONTAINER_APP }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --query "properties.configuration.ingress.fqdn" -o tsv)
+          
+          echo "🚀 Backend URL: https://$BACKEND_FQDN"
+
+  # Build and Deploy MCP Server
+  build-deploy-mcp:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.mcp == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Build and Push MCP Server Image
+        run: |
+          IMAGE_TAG=v${{ github.run_number }}
+          echo "Building mcp-server:$IMAGE_TAG..."
+          
+          az acr build \
+            --registry ${{ env.ACR_NAME }} \
+            --image mcp-server:$IMAGE_TAG \
+            --image mcp-server:latest \
+            --file src/mcp_server/Dockerfile \
+            --platform linux/amd64 \
+            src/mcp_server
+          
+          echo "MCP_IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
+
+      - name: Deploy MCP Server to Container App
+        run: |
+          echo "Deploying mcp-server:${{ env.MCP_IMAGE_TAG }} to ${{ env.MCP_CONTAINER_APP }}..."
+          
+          az containerapp update \
+            --name ${{ env.MCP_CONTAINER_APP }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --image ${{ env.ACR_LOGIN_SERVER }}/mcp-server:${{ env.MCP_IMAGE_TAG }}
+          
+          echo "✅ MCP Server deployed successfully!"
+
+      - name: Get MCP Server URL
+        run: |
+          MCP_FQDN=$(az containerapp show \
+            --name ${{ env.MCP_CONTAINER_APP }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --query "properties.configuration.ingress.fqdn" -o tsv)
+          
+          echo "🚀 MCP Server URL: https://$MCP_FQDN"
+
+  # Build and Deploy Frontend
+  build-deploy-frontend:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.frontend == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Build and Push Frontend Image
+        run: |
+          IMAGE_TAG=v${{ github.run_number }}
+          echo "Building frontend:$IMAGE_TAG..."
+          
+          az acr build \
+            --registry ${{ env.ACR_NAME }} \
+            --image frontend:$IMAGE_TAG \
+            --image frontend:latest \
+            --file src/frontend/Dockerfile \
+            --platform linux/amd64 \
+            src/frontend
+          
+          echo "FRONTEND_IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
+
+      - name: Deploy Frontend to Web App
+        run: |
+          echo "Deploying frontend:${{ env.FRONTEND_IMAGE_TAG }} to ${{ env.FRONTEND_WEB_APP }}..."
+          
+          az webapp config container set \
+            --name ${{ env.FRONTEND_WEB_APP }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --container-image-name ${{ env.ACR_LOGIN_SERVER }}/frontend:${{ env.FRONTEND_IMAGE_TAG }} \
+            --container-registry-url https://${{ env.ACR_LOGIN_SERVER }}
+          
+          echo "Restarting Web App..."
+          az webapp restart \
+            --name ${{ env.FRONTEND_WEB_APP }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }}
+          
+          echo "✅ Frontend deployed successfully!"
+
+      - name: Get Frontend URL
+        run: |
+          FRONTEND_URL=$(az webapp show \
+            --name ${{ env.FRONTEND_WEB_APP }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --query "defaultHostName" -o tsv)
+          
+          echo "🚀 Frontend URL: https://$FRONTEND_URL"
+
+  # Summary Job
+  deployment-summary:
+    needs: [detect-changes, build-deploy-backend, build-deploy-mcp, build-deploy-frontend]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deployment Summary
+        run: |
+          echo "# 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Build Number:** ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.detect-changes.outputs.backend }}" == "true" ]; then
+            if [ "${{ needs.build-deploy-backend.result }}" == "success" ]; then
+              echo "✅ **Backend:** Deployed successfully (v${{ github.run_number }})" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ **Backend:** Deployment failed" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⏭️ **Backend:** No changes detected" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.detect-changes.outputs.mcp }}" == "true" ]; then
+            if [ "${{ needs.build-deploy-mcp.result }}" == "success" ]; then
+              echo "✅ **MCP Server:** Deployed successfully (v${{ github.run_number }})" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ **MCP Server:** Deployment failed" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⏭️ **MCP Server:** No changes detected" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.detect-changes.outputs.frontend }}" == "true" ]; then
+            if [ "${{ needs.build-deploy-frontend.result }}" == "success" ]; then
+              echo "✅ **Frontend:** Deployed successfully (v${{ github.run_number }})" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ **Frontend:** Deployment failed" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⏭️ **Frontend:** No changes detected" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**URLs:**" >> $GITHUB_STEP_SUMMARY
+          echo "- Backend: https://ca-devpikfl.gentleocean-9b2e934f.northeurope.azurecontainerapps.io" >> $GITHUB_STEP_SUMMARY
+          echo "- Frontend: https://app-devpikfl.azurewebsites.net" >> $GITHUB_STEP_SUMMARY
+          echo "- MCP: https://ca-mcp-devpikfl.gentleocean-9b2e934f.northeurope.azurecontainerapps.io" >> $GITHUB_STEP_SUMMARY
