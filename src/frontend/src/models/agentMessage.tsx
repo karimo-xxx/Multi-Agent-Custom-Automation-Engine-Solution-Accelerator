@@ -3,6 +3,20 @@ import { BaseModel } from './plan';
 import { AgentMessageType, AgentType, WebsocketMessageType } from './enums';
 
 /**
+ * Represents a citation from Bing Grounding or other sources
+ */
+export interface Citation {
+    /** URL of the source */
+    url: string;
+    /** Title of the source (optional) */
+    title?: string;
+    /** Start index of the citation in the text (optional) */
+    start_index?: number;
+    /** End index of the citation in the text (optional) */
+    end_index?: number;
+}
+
+/**
  * Represents a message from an agent
  */
 export interface AgentMessage extends BaseModel {
@@ -28,6 +42,7 @@ export interface AgentMessageData {
     next_steps: any[];
     content: string;
     raw_data: string;
+    citations?: Citation[];
 }
 
 /**

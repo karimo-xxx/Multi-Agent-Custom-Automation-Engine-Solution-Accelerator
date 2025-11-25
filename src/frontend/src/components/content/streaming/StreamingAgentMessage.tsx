@@ -1,12 +1,12 @@
 import React from "react";
-import { AgentMessageData, AgentMessageType } from "@/models";
+import { AgentMessageData, AgentMessageType, Citation } from "@/models";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypePrism from "rehype-prism";
-import { Body1, Button, Tag, makeStyles, tokens } from "@fluentui/react-components";
+import { Body1, Button, Tag, makeStyles, tokens, Link } from "@fluentui/react-components";
 import { TaskService } from "@/services";
 import { Copy } from "@/coral/imports/bundleicons";
-import { PersonRegular } from "@fluentui/react-icons";
+import { PersonRegular, GlobeSearch20Regular } from "@fluentui/react-icons";
 import { getAgentIcon, getAgentDisplayName } from '@/utils/agentIconUtils';
 
 interface StreamingAgentMessageProps {
@@ -97,6 +97,36 @@ const useStyles = makeStyles({
     wordWrap: 'break-word',
     maxWidth: '100%',
     alignSelf: 'flex-start'
+  },
+  citationsContainer: {
+    marginTop: '12px',
+    paddingTop: '12px',
+    borderTop: '1px solid var(--colorNeutralStroke2)',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px'
+  },
+  citationItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    fontSize: '13px',
+    color: 'var(--colorNeutralForeground2)'
+  },
+  citationIcon: {
+    fontSize: '16px',
+    color: 'var(--colorBrandForeground1)',
+    flexShrink: 0
+  },
+  citationLink: {
+    color: 'var(--colorBrandForeground1)',
+    textDecoration: 'none',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    '&:hover': {
+      textDecoration: 'underline'
+    }
   },
 
    actionContainer: {
@@ -217,6 +247,25 @@ const renderAgentMessages = (
                   {TaskService.cleanHRAgent(msg.content) || ""}
                 </ReactMarkdown>
               </div>
+
+              {/* Citations Section */}
+              {msg.citations && msg.citations.length > 0 && (
+                <div className={styles.citationsContainer}>
+                  {msg.citations.map((citation, citIndex) => (
+                    <div key={citIndex} className={styles.citationItem}>
+                      <GlobeSearch20Regular className={styles.citationIcon} />
+                      <Link
+                        href={citation.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.citationLink}
+                      >
+                        {citation.title || citation.url}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         );

@@ -14,8 +14,45 @@ from v3.models.messages import (
     AgentMessageStreaming,
     AgentToolCall,
     AgentToolMessage,
+    CitationData,
     WebsocketMessageType,
 )
+
+
+def extract_citations(message: ChatMessageContent) -> list[CitationData]:
+    """Extract citation data from ChatMessageContent items."""
+    citations = []
+    
+    # Check if message has items (content items from Azure AI Agent)
+    if not hasattr(message, 'items') or not message.items:
+        return citations
+    
+    # Iterate through items to find annotations
+    for item in message.items:
+        # Check for annotations attribute (Azure AI Foundry format)
+        if hasattr(item, 'annotations') and item.annotations:
+            for annotation in item.annotations:
+                # Check if it's a url_citation type
+                if hasattr(annotation, 'type') and annotation.type == 'url_citation':
+                    citation = CitationData(
+                        url=getattr(annotation, 'url', ''),
+                        title=getattr(annotation, 'title', None),
+                        start_index=getattr(annotation, 'start_index', None),
+                        end_index=getattr(annotation, 'end_index', None)
+                    )
+                    citations.append(citation)
+                # Also check for url_citation attribute (alternative format)
+                elif hasattr(annotation, 'url_citation'):
+                    url_citation = annotation.url_citation
+                    citation = CitationData(
+                        url=getattr(url_citation, 'url', ''),
+                        title=getattr(url_citation, 'title', None),
+                        start_index=getattr(annotation, 'start_index', None),
+                        end_index=getattr(annotation, 'end_index', None)
+                    )
+                    citations.append(citation)
+    
+    return citations
 
 
 def clean_citations(text: str) -> str:
@@ -74,6 +111,7 @@ def agent_response_callback(message: ChatMessageContent, user_id: str = None) ->
                     agent_name=agent_name,
                     timestamp=time.time() or "",
                     content=clean_citations(message.content) or "",
+                    citations=extract_citations(message)
                 )
 
                 asyncio.create_task(

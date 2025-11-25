@@ -11,12 +11,27 @@ from v3.models.models import MPlan, PlanStatus
 
 
 @dataclass(slots=True)
+class CitationData:
+    """Citation data from Bing Grounding or other sources."""
+
+    url: str
+    title: str | None = None
+    start_index: int | None = None
+    end_index: int | None = None
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert the CitationData to a dictionary for JSON serialization."""
+        return asdict(self)
+
+
+@dataclass(slots=True)
 class AgentMessage:
     """Message from the backend to the frontend via WebSocket."""
 
     agent_name: str
     timestamp: str
     content: str
+    citations: List[CitationData] = field(default_factory=list)
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert the AgentMessage to a dictionary for JSON serialization."""
@@ -44,6 +59,7 @@ class AgentMessageStreaming:
     agent_name: str
     content: str
     is_final: bool = False
+    citations: List[CitationData] = field(default_factory=list)
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert the AgentMessageStreaming to a dictionary for JSON serialization."""
