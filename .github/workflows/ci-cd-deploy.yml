@@ -1,14 +1,14 @@
 name: CI/CD - Build and Deploy Services
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'src/backend/**'
-      - 'src/frontend/**'
-      - 'src/mcp_server/**'
-      - '.github/workflows/ci-cd-deploy.yml'
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - 'src/backend/**'
+  #     - 'src/frontend/**'
+  #     - 'src/mcp_server/**'
+  #     - '.github/workflows/ci-cd-deploy.yml'
   workflow_dispatch:
     inputs:
       deploy_backend:
@@ -33,52 +33,52 @@ env:
   MCP_CONTAINER_APP: ca-mcp-devpikfl
 
 jobs:
-  # Detect which services changed
-  detect-changes:
-    runs-on: ubuntu-latest
-    outputs:
-      backend: ${{ steps.changes.outputs.backend }}
-      frontend: ${{ steps.changes.outputs.frontend }}
-      mcp: ${{ steps.changes.outputs.mcp }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-      
-      - name: Detect changed files
-        id: changes
-        run: |
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            echo "backend=${{ inputs.deploy_backend }}" >> $GITHUB_OUTPUT
-            echo "frontend=${{ inputs.deploy_frontend }}" >> $GITHUB_OUTPUT
-            echo "mcp=${{ inputs.deploy_mcp }}" >> $GITHUB_OUTPUT
-          else
-            git diff --name-only HEAD^ HEAD > changed_files.txt
-            cat changed_files.txt
-            
-            if grep -q "^src/backend/" changed_files.txt; then
-              echo "backend=true" >> $GITHUB_OUTPUT
-            else
-              echo "backend=false" >> $GITHUB_OUTPUT
-            fi
-            
-            if grep -q "^src/frontend/" changed_files.txt; then
-              echo "frontend=true" >> $GITHUB_OUTPUT
-            else
-              echo "frontend=false" >> $GITHUB_OUTPUT
-            fi
-            
-            if grep -q "^src/mcp_server/" changed_files.txt; then
-              echo "mcp=true" >> $GITHUB_OUTPUT
-            else
-              echo "mcp=false" >> $GITHUB_OUTPUT
-            fi
-          fi
+  # detect-changes:
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     backend: ${{ steps.changes.outputs.backend }}
+  #     frontend: ${{ steps.changes.outputs.frontend }}
+  #     mcp: ${{ steps.changes.outputs.mcp }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 2
+  #     
+  #     - name: Detect changed files
+  #       id: changes
+  #       run: |
+  #         if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+  #           echo "backend=${{ inputs.deploy_backend }}" >> $GITHUB_OUTPUT
+  #           echo "frontend=${{ inputs.deploy_frontend }}" >> $GITHUB_OUTPUT
+  #           echo "mcp=${{ inputs.deploy_mcp }}" >> $GITHUB_OUTPUT
+  #         else
+  #           git diff --name-only HEAD^ HEAD > changed_files.txt
+  #           cat changed_files.txt
+  #           
+  #           if grep -q "^src/backend/" changed_files.txt; then
+  #             echo "backend=true" >> $GITHUB_OUTPUT
+  #           else
+  #             echo "backend=false" >> $GITHUB_OUTPUT
+  #           fi
+  #           
+  #           if grep -q "^src/frontend/" changed_files.txt; then
+  #             echo "frontend=true" >> $GITHUB_OUTPUT
+  #           else
+  #             echo "frontend=false" >> $GITHUB_OUTPUT
+  #           fi
+  #           
+  #           if grep -q "^src/mcp_server/" changed_files.txt; then
+  #             echo "mcp=true" >> $GITHUB_OUTPUT
+  #           else
+  #             echo "mcp=false" >> $GITHUB_OUTPUT
+  #           fi
+  #         fi
 
   # Build and Deploy Backend
   build-deploy-backend:
-    needs: detect-changes
-    if: needs.detect-changes.outputs.backend == 'true'
+    # needs: detect-changes
+    # if: needs.detect-changes.outputs.backend == 'true'
+    if: github.event.inputs.deploy_backend == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -125,8 +125,9 @@ jobs:
 
   # Build and Deploy MCP Server
   build-deploy-mcp:
-    needs: detect-changes
-    if: needs.detect-changes.outputs.mcp == 'true'
+    # needs: detect-changes
+    # if: needs.detect-changes.outputs.mcp == 'true'
+    if: github.event.inputs.deploy_mcp == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -173,8 +174,9 @@ jobs:
 
   # Build and Deploy Frontend
   build-deploy-frontend:
-    needs: detect-changes
-    if: needs.detect-changes.outputs.frontend == 'true'
+    # needs: detect-changes
+    # if: needs.detect-changes.outputs.frontend == 'true'
+    if: github.event.inputs.deploy_frontend == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -227,7 +229,8 @@ jobs:
 
   # Summary Job
   deployment-summary:
-    needs: [detect-changes, build-deploy-backend, build-deploy-mcp, build-deploy-frontend]
+    # needs: [detect-changes, build-deploy-backend, build-deploy-mcp, build-deploy-frontend]
+    needs: [build-deploy-backend, build-deploy-mcp, build-deploy-frontend]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -239,34 +242,34 @@ jobs:
           echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
-          if [ "${{ needs.detect-changes.outputs.backend }}" == "true" ]; then
+          if [ "${{ github.event.inputs.deploy_backend }}" == "true" ]; then
             if [ "${{ needs.build-deploy-backend.result }}" == "success" ]; then
               echo "✅ **Backend:** Deployed successfully (v${{ github.run_number }})" >> $GITHUB_STEP_SUMMARY
             else
               echo "❌ **Backend:** Deployment failed" >> $GITHUB_STEP_SUMMARY
             fi
           else
-            echo "⏭️ **Backend:** No changes detected" >> $GITHUB_STEP_SUMMARY
+            echo "⏭️ **Backend:** Skipped" >> $GITHUB_STEP_SUMMARY
           fi
           
-          if [ "${{ needs.detect-changes.outputs.mcp }}" == "true" ]; then
+          if [ "${{ github.event.inputs.deploy_mcp }}" == "true" ]; then
             if [ "${{ needs.build-deploy-mcp.result }}" == "success" ]; then
               echo "✅ **MCP Server:** Deployed successfully (v${{ github.run_number }})" >> $GITHUB_STEP_SUMMARY
             else
               echo "❌ **MCP Server:** Deployment failed" >> $GITHUB_STEP_SUMMARY
             fi
           else
-            echo "⏭️ **MCP Server:** No changes detected" >> $GITHUB_STEP_SUMMARY
+            echo "⏭️ **MCP Server:** Skipped" >> $GITHUB_STEP_SUMMARY
           fi
           
-          if [ "${{ needs.detect-changes.outputs.frontend }}" == "true" ]; then
+          if [ "${{ github.event.inputs.deploy_frontend }}" == "true" ]; then
             if [ "${{ needs.build-deploy-frontend.result }}" == "success" ]; then
               echo "✅ **Frontend:** Deployed successfully (v${{ github.run_number }})" >> $GITHUB_STEP_SUMMARY
             else
               echo "❌ **Frontend:** Deployment failed" >> $GITHUB_STEP_SUMMARY
             fi
           else
-            echo "⏭️ **Frontend:** No changes detected" >> $GITHUB_STEP_SUMMARY
+            echo "⏭️ **Frontend:** Skipped" >> $GITHUB_STEP_SUMMARY
           fi
           
           echo "" >> $GITHUB_STEP_SUMMARY
