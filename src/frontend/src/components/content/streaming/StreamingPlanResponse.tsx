@@ -317,7 +317,11 @@ const renderPlanResponse = (
                     </Text>
                     {!isCreatingPlan && (
                         <Tag 
-                            appearance="brand"
+                            style={{
+                                backgroundColor: '#001a14',
+                                color: 'white',
+                                borderColor: '#001a14'
+                            }}
                         >
                             AI Agent
                         </Tag>

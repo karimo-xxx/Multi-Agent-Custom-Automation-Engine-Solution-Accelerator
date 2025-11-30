@@ -326,8 +326,22 @@
 }
 
 .teamCardSelected {
-  background-color: var(--colorBrandBackground2);
-  border-color: var(--colorBrandStroke1);
+  background-color: #001a14;
+  border-color: #001a14;
+  color: white;
+}
+
+.teamCardSelected:hover {
+  background-color: #001a14;
+  border-color: #001a14;
+}
+
+.teamCardSelected .teamName {
+  color: white !important;
+}
+
+.teamCardSelected .teamDescription {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* Radio Button Column */

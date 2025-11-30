@@ -190,7 +190,7 @@ const HomePage: React.FC = () => {
                     />
                     <Content>
                         <ContentToolbar
-                            panelTitle={"Multi-Agent Planner"}
+                            panelTitle={"Intelligence Hub"}
                         ></ContentToolbar>
                         {!isLoadingTeam ? (
                             <HomeInput

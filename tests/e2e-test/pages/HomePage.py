@@ -1,4 +1,4 @@
-"""BIAB Page object for automating interactions with the Multi-Agent Planner UI."""
+"""BIAB Page object for automating interactions with the Intelligence Hub UI."""
 
 import logging
 from playwright.sync_api import expect
@@ -8,9 +8,9 @@ logger = logging.getLogger(__name__)
 
 
 class BIABPage(BasePage):
-    """Page object model for BIAB/Multi-Agent Planner workflow automation."""
+    """Page object model for BIAB/Intelligence Hub workflow automation."""
 
-    WELCOME_PAGE_TITLE = "//span[normalize-space()='Multi-Agent Planner']"
+    WELCOME_PAGE_TITLE = "//span[normalize-space()='Intelligence Hub']"
     AI_TEXT = "//span[.='AI-generated content may be incorrect']"
     CONTOSO_LOGO = "//span[.='Contoso']"
     NEW_TASK_PROMPT = "//div[@class='tab tab-new-task']"

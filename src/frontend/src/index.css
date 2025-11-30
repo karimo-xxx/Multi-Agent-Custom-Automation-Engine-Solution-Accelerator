@@ -3,6 +3,12 @@ body, html, :root {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    
+    /* ALTYCA Brand Colors */
+    --altyca-primary: #00cc99;
+    --altyca-primary-light: #00e6ad;
+    --altyca-primary-dark: #00b386;
+    --altyca-primary-hover: #00d9a3;
 }
 
 
@@ -56,12 +62,32 @@ pre:has-text('RAI_VALIDATION_FAILED') {
   }
 
   .chart-container canvas {
-    --chartBarColor: var(--colorBrandBackground);
-    --chartHoverColor: var(--colorBrandBackgroundHover);
-    --chartBorderColor: var(--colorBrandForeground1);
-    --chartLineColor: var(--colorBrandForeground1);
-    --chartPointColor: var(--colorBrandBackground);
-    --chartPointBorderColor: var(--colorBrandForeground1);
+    --chartBarColor: var(--altyca-primary);
+    --chartHoverColor: var(--altyca-primary-hover);
+    --chartBorderColor: var(--altyca-primary);
+    --chartLineColor: var(--altyca-primary);
+    --chartPointColor: var(--altyca-primary);
+    --chartPointBorderColor: var(--altyca-primary);
+}
+
+/* Override Fluent UI Brand Colors with ALTYCA colors */
+:root {
+  --colorBrandBackground: var(--altyca-primary) !important;
+  --colorBrandBackgroundHover: var(--altyca-primary-hover) !important;
+  --colorBrandBackgroundPressed: var(--altyca-primary-dark) !important;
+  --colorBrandBackground2: var(--altyca-primary) !important;
+  --colorBrandForeground1: var(--altyca-primary) !important;
+  --colorBrandForeground1Hover: var(--altyca-primary-hover) !important;
+  --colorBrandForeground1Pressed: var(--altyca-primary-dark) !important;
+  --colorBrandForeground2: var(--altyca-primary) !important;
+  --colorBrandForegroundHover: var(--altyca-primary-hover) !important;
+  --colorBrandForegroundPressed: var(--altyca-primary-dark) !important;
+  --colorBrandStroke1: var(--altyca-primary) !important;
+  --colorBrandStroke2: var(--altyca-primary-dark) !important;
+  --colorCompoundBrandStroke: var(--altyca-primary) !important;
+  --colorCompoundBrandStrokeHover: var(--altyca-primary-hover) !important;
+  --colorCompoundBrandStrokePressed: var(--altyca-primary-dark) !important;
+  --colorNeutralBrandForeground1: var(--altyca-primary) !important;
 }
 
 

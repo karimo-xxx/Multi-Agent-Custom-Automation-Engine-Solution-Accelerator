@@ -706,7 +706,7 @@ const PlanPage: React.FC = () => {
                     ) : (
                         <>
                             <ContentToolbar
-                                panelTitle="Multi-Agent Planner"
+                                panelTitle="Intelligence Hub"
                             >
                                 {/* <PanelRightToggles>
                                     <TaskListSquareLtr />

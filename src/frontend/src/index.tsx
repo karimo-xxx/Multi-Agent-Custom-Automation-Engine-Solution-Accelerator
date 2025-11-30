@@ -3,10 +3,39 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { FluentProvider, teamsLightTheme, teamsDarkTheme } from "@fluentui/react-components";
+import { FluentProvider, teamsLightTheme, teamsDarkTheme, Theme, createLightTheme, createDarkTheme, BrandVariants } from "@fluentui/react-components";
 import { setEnvData, setApiUrl, config as defaultConfig, toBoolean, getUserInfo, setUserInfoGlobal } from './api/config';
 import { UserInfo } from './models';
 import { apiService } from './api';
+
+// ALTYCA Brand Colors
+const altycaBrand: BrandVariants = {
+  10: "#001a14",
+  20: "#00331f",
+  30: "#004d2b",
+  40: "#006638",
+  50: "#008047",
+  60: "#009955",
+  70: "#00b366",
+  80: "#00cc77",
+  90: "#00e68a",
+  100: "#00ff9d",
+  110: "#1aff99",
+  120: "#33ffaa",
+  130: "#4dffbb",
+  140: "#66ffcc",
+  150: "#80ffdd",
+  160: "#99ffee"
+};
+
+const altycaLightTheme: Theme = {
+  ...createLightTheme(altycaBrand),
+};
+
+const altycaDarkTheme: Theme = {
+  ...createDarkTheme(altycaBrand),
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 const AppWrapper = () => {
@@ -53,7 +82,7 @@ const AppWrapper = () => {
   if (!isConfigLoaded || !isUserInfoLoaded) return <div>Loading...</div>;
   return (
     <StrictMode>
-      <FluentProvider theme={isDarkMode ? teamsDarkTheme : teamsLightTheme} style={{ height: "100vh" }}>
+      <FluentProvider theme={isDarkMode ? altycaDarkTheme : altycaLightTheme} style={{ height: "100vh" }}>
         <App />
       </FluentProvider>
     </StrictMode>
