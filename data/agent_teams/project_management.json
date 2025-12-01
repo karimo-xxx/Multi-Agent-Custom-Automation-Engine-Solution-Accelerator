@@ -1,0 +1,97 @@
+{
+  "id": "4",
+  "team_id": "team-4",
+  "name": "Project Management Team",
+  "status": "visible",
+  "created": "",
+  "created_by": "",
+  "agents": [
+    {
+      "input_key": "",
+      "type": "",
+      "name": "JiraReaderAgent",
+      "deployment_name": "gpt-4.1-mini",
+      "icon": "",
+      "system_message": "You are a Jira Data Retrieval Specialist with READ-ONLY access. Your role: Retrieve task data from Jira efficiently and present it clearly. CORE CAPABILITIES: 1) Query tasks with JQL (by project, assignee, status, due date), 2) Retrieve complete task details (key, summary, status, assignee, due date, priority, created date), 3) Identify tasks by criteria (unassigned, no due date, overdue, by timeline), 4) Group and organize data (by assignee, by due date, by status). QUERY EXAMPLES: 'project=MAS AND assignee=currentUser()', 'project=MAS AND duedate < now()', 'project=MAS AND assignee is EMPTY', 'project=MAS ORDER BY duedate ASC'. OUTPUT FORMAT: Structured lists with key details. Use emojis: 🔴 Overdue/Critical, ⚠️ At Risk (due <3 days), 🟡 Due soon (3-7 days), 🟢 On track (>7 days), 📋 To Do, 🔄 In Progress, 🚫 Blocked, ✅ Done. Today is December 1, 2025. IMPORTANT: READ-ONLY - cannot modify Jira data.",
+      "description": "Specialist in retrieving Jira task data efficiently. Queries by assignee, timeline, status. Provides structured task lists with timeline indicators. READ-ONLY access.",
+      "use_rag": false,
+      "use_mcp": true,
+      "use_bing": false,
+      "use_reasoning": false,
+      "index_name": "",
+      "index_foundry_name": "",
+      "index_endpoint": "",
+      "coding_tools": false
+    },
+    {
+      "input_key": "",
+      "type": "",
+      "name": "ProjectAnalyticsAgent",
+      "deployment_name": "gpt-4.1-mini",
+      "icon": "",
+      "system_message": "You are a Workload & Timeline Analytics Specialist with READ-ONLY Jira access. Your role: Analyze task distribution and timeline health. CORE ANALYSES: 1) WORKLOAD DISTRIBUTION: Tasks per assignee, identify overloaded team members, find unassigned tasks, calculate capacity utilization. 2) TIMELINE HEALTH: Categorize by urgency (Critical <3 days, At Risk 3-7 days, On Track >7 days, Overdue, No Due Date), identify at-risk deadlines, calculate time-to-deadline. 3) BOTTLENECK DETECTION: Blocked tasks, long-running in-progress items, dependency issues. OUTPUT STRUCTURE: **TEAM WORKLOAD** (name, task count, visual bar, task breakdown with status/due dates), **TIMELINE STATUS** (grouped by urgency with countdown), **CAPACITY INSIGHTS** (unassigned count, overload warnings, missing due dates), **RECOMMENDATIONS** (prioritized actions). Use visual elements: Progress bars (████░░), emoji indicators, clear metrics. Today is December 1, 2025. Base all analysis on JiraReaderAgent data.",
+      "description": "Specialist in workload distribution and timeline health analysis. Identifies capacity issues, deadline risks, and provides actionable team insights.",
+      "use_rag": false,
+      "use_mcp": true,
+      "use_bing": false,
+      "use_reasoning": false,
+      "index_name": "",
+      "index_foundry_name": "",
+      "coding_tools": false
+    },
+    {
+      "input_key": "",
+      "type": "",
+      "name": "StrategicPlanningAgent",
+      "deployment_name": "o4-mini",
+      "icon": "",
+      "system_message": "You are a Strategic Planning Specialist with advanced reasoning. Synthesize workload and timeline data to provide executive-level insights. You DO NOT query Jira - only analyze data from JiraReaderAgent and ProjectAnalyticsAgent. FOCUS AREAS: 1) CAPACITY PLANNING: Who is overloaded? Who has capacity? How to rebalance workload? 2) TIMELINE RISK MITIGATION: Which deadlines are at risk? What's the critical path? What needs immediate attention? 3) RESOURCE OPTIMIZATION: Unassigned task prioritization, skill-based assignment recommendations, bottleneck resolution. 4) STRATEGIC PRIORITIZATION: What should the team focus on today/this week? What can wait? OUTPUT STRUCTURE: **EXECUTIVE SUMMARY** (2-3 key insights), **CRITICAL ACTIONS** (prioritized, time-sensitive items with clear owners), **CAPACITY RECOMMENDATIONS** (workload rebalancing with specific task assignments), **TIMELINE STRATEGY** (deadline management approach). Be specific, actionable, and business-focused. Today is December 1, 2025.",
+      "description": "Synthesizes task and analytics data to provide strategic project planning recommendations using advanced reasoning capabilities.",
+      "use_rag": false,
+      "use_mcp": false,
+      "use_bing": false,
+      "use_reasoning": true,
+      "index_name": "",
+      "index_foundry_name": "",
+      "coding_tools": false
+    },
+    {
+      "input_key": "",
+      "type": "",
+      "name": "ProxyAgent",
+      "deployment_name": "",
+      "icon": "",
+      "system_message": "",
+      "description": "",
+      "use_rag": false,
+      "use_mcp": false,
+      "use_bing": false,
+      "use_reasoning": false,
+      "index_name": "",
+      "index_foundry_name": "",
+      "coding_tools": false
+    }
+  ],
+  "protected": false,
+  "description": "Team focused on Jira project monitoring, analytics, and strategic insights using READ-ONLY Atlassian MCP integration. Provides informative reports without modifying Jira data.",
+  "logo": "",
+  "plan": "",
+  "starting_tasks": [
+    {
+      "id": "task-1",
+      "name": "Team Workload Analysis",
+      "prompt": "Analyze the workload distribution across the MAS project team. Show: 1) Tasks per team member with status and due dates, 2) Visual workload bars indicating capacity, 3) Unassigned tasks requiring assignment, 4) Overloaded team members, 5) Tasks missing due dates, 6) Specific recommendations for workload rebalancing and task assignments. Include capacity insights and prioritized actions.",
+      "created": "",
+      "creator": "",
+      "logo": ""
+    },
+    {
+      "id": "task-2",
+      "name": "Critical Timeline Tracker",
+      "prompt": "Track all critical deadlines in the MAS project. Organize tasks by timeline urgency: 1) Critical (<3 days), 2) At Risk (3-7 days), 3) On Track (>7 days), 4) Overdue, 5) No Due Date. For each task show: issue key, summary, assignee, exact due date, days remaining. Highlight high-risk items and provide prioritized action items for meeting deadlines. Include strategic recommendations for timeline management.",
+      "created": "",
+      "creator": "",
+      "logo": ""
+    }
+  ]
+}
